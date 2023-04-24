@@ -1,0 +1,41 @@
+@include media-breakpoint-up(lg) {
+}
+@include media-breakpoint-down(lg) {
+  .custom-container{
+    width: 100%;
+  }
+}
+@include media-breakpoint-down(xl) {
+}
+@include media-breakpoint-down(sm) {
+  .fs-1 {
+    font-size: calc(1.325rem + 1.4vw) !important;
+  }
+  .fs-2 {
+    font-size: calc(1.275rem + 0.8vw) !important;
+  }
+  .fs-3 {
+    font-size: calc(1.25rem + 0.5vw) !important;
+  }
+  .fs-4 {
+    font-size: calc(1.225rem + 0.2vw) !important;
+  }
+  .fs-5 {
+    font-size: 1.2rem !important;
+  }
+  .fs-6 {
+    font-size: 1rem !important;
+  }
+   p, span {
+    font-size: 0.90rem !important;
+    line-height: 1.7;
+  }
+  small, .small {
+    font-size: 0.875rem !important;
+  }
+}
+
+@include media-breakpoint-up(md) {
+}
+@include media-breakpoint-down(md) {
+}

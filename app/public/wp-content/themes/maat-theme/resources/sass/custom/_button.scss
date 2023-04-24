@@ -1,0 +1,171 @@
+//
+// Base styles
+//
+
+.btn {
+  display: inline-block;
+  font-family: $btn-font-family;
+  font-weight: $btn-font-weight;
+  line-height: $btn-line-height;
+  color: $body-text;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-border-radius);
+  @include transition($btn-transition);
+  outline: 0 !important;
+  z-index: 1;
+  position: relative;
+
+  &:disabled,
+  &.disabled,
+  fieldset:disabled & {
+    pointer-events: none;
+    opacity: $btn-disabled-opacity;
+    @include box-shadow(none);
+  }
+}
+
+@mixin dynamic-button($bg-color, $text-color) {
+  a {
+    width: 120px;
+    height: 40px;
+    transition: all 0.3s ease-in-out;
+    color: rgba(0, 0, 0, 0.50);
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background-color: $bg-color;
+      transition: all 0.3s 0.2s ease;
+      left: 0;
+      top: 0;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: $bg-color;
+      transition: all 0.3s ease;
+      right: 0;
+      bottom: 0;
+    }
+
+    p {
+      &:before {
+        content: "";
+        position: absolute;
+        width: 2px;
+        height: 0;
+        background-color: $bg-color;
+        transition: all 0.3s 0.4s ease;
+        right: 0;
+        top: 0;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        width: 2px;
+        height: 0;
+        background-color: $bg-color;
+        transition: all 0.3s ease;
+        left: 0;
+        bottom: 0;
+      }
+    }
+
+
+    &:hover {
+      color: $text-color;
+      transition: all 0.3s ease-in-out;
+
+      &:before,
+      &:after {
+        width: 100%;
+      }
+
+
+      p {
+        z-index: 1;
+
+        &:before,
+        &:after {
+          height: 100%;
+        }
+      }
+
+      span {
+        height: 100%;
+        top: 0;
+      }
+    }
+  }
+
+  button:active {
+    outline: none;
+    border: none;
+  }
+  button:focus {
+    outline: 0;
+  }
+
+}
+
+// Define classes for different button colors
+.button-white {
+  @include dynamic-button($dark, white);
+}
+
+.button-primary {
+  @include dynamic-button(#00B3AC, black);
+}
+
+@mixin dynamic-icon($icon-color) {
+  a {
+    i{
+      transition: all 265ms ease-out;
+    }
+    &:hover:before {
+      transform: scale(0);
+      transition: all 265ms ease-in;
+    }
+    &:before {
+      transform: scale(1);
+      content: " ";
+      border: 1px solid $icon-color;
+      border-radius: 100%;
+      display: block;
+      transition: all 265ms ease-out;
+      position: absolute;
+      right: 0;
+      top: 0;
+      left: 0;
+      bottom: 1px;
+    }
+    &:hover i {
+      transform: scale(1.4);
+      border-style: none;
+      transition: all 265ms ease-in;
+    }
+  }
+}
+
+.icon-white {
+  @include dynamic-icon(#ffffff);
+}
+
+.icon-dark {
+  @include dynamic-icon(#00B3AC);
+}
+
+

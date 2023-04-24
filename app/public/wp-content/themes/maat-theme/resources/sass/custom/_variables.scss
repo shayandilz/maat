@@ -1,0 +1,56 @@
+//COLOR
+$body-color: #000000;
+$body-text: #5E6972;
+$light: rgba(255, 255, 255, 0.5);
+$dark: rgba(26, 25, 29, 0.95);
+
+
+$primary: #00B3AC;
+$secondary: #F1F1F1;
+$danger: #292D73;
+//base class variables
+$transition-base: all .4s;
+$transition-fast: all .2s ease-in-out;
+$transition: all .4s ease-in-out;
+$transition-slow: all .6s;
+
+//FONTS
+$font-weight-normal: 400;
+$font-weight-bold: 500;
+$font-weight-semibold: 700;
+$font-weight-bolder: 900;
+$font-weight-base: $font-weight-normal;
+
+$min-contrast-ratio: 2.5;
+$font-family-base: Ravi, 'sans-serif', 'Nunito';
+$font-size-base: 1.14rem * calc(14/16);
+$small-font-size: .875rem  * calc(14/16);
+$line-height-base: 1.5;
+$line-height-lg: 1.7;
+$line-height-sm: 0.8;
+$enable-smooth-scroll: true;
+$enable-negative-margins: true;
+$stretched-link-z-index: 1;
+
+
+//link
+$link-decoration: none;
+$link-hover-decoration: none;
+$link-color: #fff;
+
+//tabs
+$nav-tabs-link-active-bg: $primary;
+$nav-tabs-link-active-color:#fff;
+
+//navbar
+$nav-link-color: $body-color;
+
+$display-font-sizes:(
+        1: 7rem,
+        2: 6.5rem,
+        3: 4rem,
+        4: 3.5rem,
+        5: 3rem,
+        6: 2.5rem
+)
+

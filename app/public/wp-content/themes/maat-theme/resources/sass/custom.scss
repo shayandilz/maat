@@ -1,0 +1,206 @@
+
+//custom classes
+@import "custom/variables";
+// Bootstrap
+@import 'modules/bootstrap';
+
+//custom base classes
+@import "custom/base";
+@import "custom/editor";
+@import "custom/button";
+
+// header
+@import "custom/header";
+
+
+@import "responsive";
+
+
+//swiper pagination
+.swiper-pagination-total {
+  font-size: 50px!important;
+  padding-top: 10px;
+  @extend .fw-bold;
+}
+
+//client slider
+
+.client-swiper {
+  .swiper-slide {
+    transition: transform 0.4s ease-in-out;
+    transform: scale(.6) !important;
+    filter: grayscale(1);
+
+    &.scaled-down {
+      transform: scale(1) !important;
+    }
+  }
+
+  .swiper-slide-active {
+    transform: scale(1.8) !important;
+    filter: grayscale(0) !important;
+  }
+}
+
+
+//about us svg
+#about_svg polygon, #about_svg line, #about_svg path, #about_svg polyline{
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+
+}
+
+.draw polygon, .draw line, .draw path, .draw polyline {
+  animation: draw 4s ease-in forwards;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+//svg animation on service screen
+//.svg-list path {
+//  opacity: 0;
+//
+//}
+
+//tabs
+.filterPortfolio.nav-link {
+  width: max-content;
+  background-color: #F1F1F1;
+}
+
+//pagination
+.page-item > a {
+  @extend .text-black-50;
+}
+
+.page-numbers {
+  @extend .text-black-50;
+
+  &.page-numbers.current {
+    @extend .text-dark, .fw-bold;
+  }
+}
+
+//social icons ( footer and Contact )
+
+
+// services card text
+.card-text {
+  div{
+    height: 70px;
+    overflow: hidden;
+    transition: height 0.5s ease-in-out;
+  }
+  span{
+    bottom: 40px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+  }
+}
+.rotate {
+  transform: rotate(180deg);
+  transition: transform 0.2s ease-in-out;
+}
+
+//animating button
+.buttons {
+  a {
+    width: 120px;
+    height: 40px;
+    transition: all 0.3s ease;
+    color: rgba(0, 0, 0, 0.50);
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background-color: $primary;
+      transition: all 0.3s 0.2s ease;
+      left: 0;
+      top: 0;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: $primary;
+      transition: all 0.3s ease;
+      right: 0;
+      bottom: 0;
+    }
+
+    p {
+      &:before {
+        content: "";
+        position: absolute;
+        width: 2px;
+        height: 0;
+        background-color: $primary;
+        transition: all 0.3s 0.4s ease;
+        right: 0;
+        top: 0;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        width: 2px;
+        height: 0;
+        background-color: $primary;
+        transition: all 0.3s ease;
+        left: 0;
+        bottom: 0;
+      }
+    }
+
+
+
+    &:hover {
+      color: $primary;
+      &:before,
+      &:after {
+        width: 100%;
+      }
+
+
+      p {
+        z-index:1;
+        &:before,
+        &:after {
+          height: 100%;
+        }
+      }
+
+      span {
+        height: 100%;
+        top:0;
+      }
+    }
+  }
+
+  button:active {
+    outline: none;
+    border: none;
+  }
+  button:focus {
+    outline: 0;
+  }
+}
+
+//form
+.gform_wrapper.gravity-theme .gform_fields{
+  grid-row-gap: 2px!important;
+}
+#gform_fields_1 input,
+#gform_fields_1 textarea{
+  @extend .form-control;
+}
+.gform_footer input[type="submit"]{
+  @extend .btn,.btn-primary, .border-1,.border-primary,.rounded-0;
+}
