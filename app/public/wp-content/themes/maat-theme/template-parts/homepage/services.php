@@ -1,6 +1,6 @@
 <section class="custom-container min-vh-50 d-flex align-items-center mt-lg-0 mt-5">
-    <div class="row">
-        <div class="col-lg-6 row">
+    <div class="row justify-content-center justify-content-lg-start g-3 g-lg-2">
+        <div class="col-lg-6 row px-0 px-lg-2">
             <div class="col-lg-6">
                 <h3 class="text-start text-primary display-5 fw-bolder" data-aos="fade-up" data-aos-delay="100" data-aos-duration="500">
                     <?= get_field('services_section_title') ?>

@@ -21,8 +21,7 @@
                             while ($loopClients->have_posts()) : $loopClients->the_post();
                                 $i++;
                                 ?>
-                                <div class="swiper-slide" data-aos="zoom-in" data-aos-delay="<?= $i; ?>00"
-                                     data-aos-duration="<?= $i; ?>00">
+                                <div class="swiper-slide">
                                     <img
                                             class="img-fluid"
                                             src="<?php echo get_the_post_thumbnail_url() ?>"

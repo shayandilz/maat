@@ -34,6 +34,7 @@ const client = new Swiper('.client-swiper', {
     // Optional parameters
     loop: true,
     effect: 'slide',
+    speed: 500,
     loopFillGroupBlank: false,
     grabCursor: true,
     slidesPerView: 3,
@@ -51,8 +52,8 @@ const client = new Swiper('.client-swiper', {
         nextEl: '.swiper-prev-client',
         prevEl: '.swiper-next-client',
     },
-    autoplay: {
-        delay: 2000,
-    },
+    // autoplay: {
+    //     delay: 2000,
+    // },
     disableOnInteraction: false,
 })
