@@ -92,8 +92,13 @@
             </div>
         </div>
     </div>
+
 </footer>
 </main>
 <?php wp_footer(); ?>
+<a href="#" rel="nofollow"
+   class="backTo_Top position-fixed bg-white text-primary rounded-circle shadow d-flex justify-content-center align-items-center intro">
+    <i class="bi bi-chevron-up d-flex justify-content-center align-items-center fs-3"></i>
+</a>
 </body>
 </html>

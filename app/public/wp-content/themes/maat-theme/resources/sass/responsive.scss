@@ -1,4 +1,17 @@
 @include media-breakpoint-up(lg) {
+  .supah-scroll {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    will-change: transform;
+    overflow: hidden;
+    > section{
+      position: relative!important;
+    }
+  }
 }
 @include media-breakpoint-down(lg) {
   .custom-container{

@@ -55,18 +55,38 @@ header{
   bottom: 15px;
   z-index: 10;
   transition: 0.5s;
-  transform: translateY(100px);
+  line-height: 2.4;
+  transform: translateX(-200%);
+  opacity: 0;
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 .intro {
   animation: intro 800ms ease-out forwards;
 }
 @keyframes intro {
-  0% {
-    transform: translateY(100px);
+  from {
+    transform: translateX(-200%);
     opacity: 0;
   }
-  100% {
-    transform: translateY(0);
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.outro {
+  animation: outro 800ms ease-out forwards;
+}
+@keyframes outro {
+  from {
+    transform: translateX(0%);
+    opacity: 0.5;
+  }
+
+  to {
+    transform: translateX(-200%);
+    opacity: 0;
   }
 }
 
