@@ -1,4 +1,4 @@
-<section class="custom-container min-vh-50 d-flex align-items-center mt-lg-0 mt-5">
+<section class="container min-vh-50 d-flex align-items-center mt-lg-0 mt-5">
     <div class="row justify-content-center justify-content-lg-start g-3 g-lg-2">
         <div class="col-lg-6 row px-0 px-lg-2">
             <div class="col-lg-6">

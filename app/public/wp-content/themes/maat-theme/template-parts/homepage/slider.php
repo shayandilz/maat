@@ -1,5 +1,5 @@
-<section class="custom-container">
-    <div class="row gx-5 min-vh-75 mt-5 mt-lg-0">
+<section class="container">
+    <div class="row gx-4 min-vh-75 margin-t-80">
         <div class="col-lg-6 col-12 mt-5 mt-lg-0">
             <div class="swiper home-swiper" data-aos="fade-in" data-aos-delay="200">
                 <div class="swiper-wrapper">
@@ -13,12 +13,11 @@
                                      alt="<?php echo esc_attr($image['alt']); ?>"/>
                             </div>
                         <?php endforeach; ?>
-
                     <?php endif; ?>
                 </div>
             </div>
             <div class="row pt-1 justify-content-between align-items-center">
-                <div class="col-6 d-flex justify-content-start gap-3 text-primary fs-3">
+                <div class="col-6 d-flex justify-content-start gap-3 text-primary fs-4">
                     <div class="swiper-next" data-aos="fade-left" data-aos-delay="300" data-aos-offset="0">
                         <?php get_template_part('template-parts/svg/right-arrow'); ?>
                     </div>

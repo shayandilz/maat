@@ -9,7 +9,7 @@
 get_header(); ?>
 
 
-    <section class="custom-container">
+    <section class="container">
         <div class="row gx-5 min-vh-50">
             <div class="col-lg-6">
                 <?php the_field('svg'); ?>

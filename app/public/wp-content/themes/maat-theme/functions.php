@@ -6,8 +6,7 @@ function theme_scripts()
 {
 
     //    <!-- Icons -->
-    wp_enqueue_style('bootstrap-icons', 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css', array());
-
+    wp_enqueue_style('bootstrap-icons', get_template_directory_uri() . '/public/fonts/bootstrap/bootstrap-icons.css');
     wp_enqueue_style('Ravi', get_template_directory_uri() . '/public/fonts/Ravi/fontface.css', array());
     wp_enqueue_style('Sofia', get_template_directory_uri() . '/public/fonts/Sofia/fontface.css', array());
     wp_enqueue_style('icons', get_template_directory_uri() . '/public/fonts/icons/fontface.css', array());

@@ -4,7 +4,7 @@
 get_header(); ?>
 
     <section class="pt-5 min-vh-100">
-        <div class="custom-container">
+        <div class="container">
             <h1 class="text-end text-primary display-1 text-uppercase sofia fw-bolder lh-sm mt-5 mb-0">
                 Blog <br>
                 AND News

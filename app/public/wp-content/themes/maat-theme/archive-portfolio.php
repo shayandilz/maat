@@ -9,7 +9,7 @@ $portfolio = array(
 $loop_portfolio = new WP_Query($portfolio);
 ?>
 
-    <section class="py-5 custom-container min-vh-100 mt-5 mt-lg-0">
+    <section class="py-5 container min-vh-100 mt-5 mt-lg-0">
         <ul class="nav nav-tabs border-bottom-0 justify-content-lg-center gap-4 flex-nowrap overflow-tab overflow-x-scroll overflow-y-hidden mt-5 my-lg-5"
             id="myTab"
             role="tablist">
@@ -55,7 +55,8 @@ $loop_portfolio = new WP_Query($portfolio);
                     echo 'show active';
                 } ?>" id="cat-<?php echo $key; ?>" role="tabpanel"
                      aria-labelledby="cat-<?php echo $key; ?>-tab">
-                    <div class="row row-gap-4 justify-content-lg-start justify-content-center" id="my-custom-post-type-container">
+                    <div class="row row-gap-4 justify-content-lg-start justify-content-center"
+                         id="my-custom-post-type-container">
                         <?php
                         $args = array(
                             'post_type' => 'portfolio',
@@ -88,10 +89,12 @@ $loop_portfolio = new WP_Query($portfolio);
                                 } ?>
                                 <div class="<?php echo $col_class; ?> row align-items-center aos" data-aos="zoom-in"
                                      data-aos-delay="<?= $i; ?>00">
-                                    <img src="<?php echo get_the_post_thumbnail_url() ?>"
-                                         class="img-fluid w-100 px-0 px-lg-2 order-2 order-lg-1"
-                                         title="<?php the_title(); ?>"
-                                         alt="<?php the_title(); ?>">
+                                    <div class="ratio ratio-21x9 px-0 px-lg-2 order-2 order-lg-1">
+                                        <img src="<?php echo get_the_post_thumbnail_url() ?>"
+                                             class="object-fit"
+                                             title="<?php the_title(); ?>"
+                                             alt="<?php the_title(); ?>">
+                                    </div>
                                     <?php if ($i == 1 || $i == 2 || $i == 3) { ?>
                                         <!--  showing year / brand name and client   -->
                                         <div class="my-lg-5 mb-3 mt-2 col-lg-6 d-flex flex-column align-items-start gap-3 order-3 order-lg-2">

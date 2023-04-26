@@ -9,7 +9,7 @@ $services = array(
 $loop_services = new WP_Query($services);
 ?>
 
-    <section class="py-5 custom-container min-vh-100">
+    <section class="py-5 container min-vh-100">
         <div class="row align-items-center mt-5">
             <div class="col-lg-6">
                 <ul class="list-unstyled d-inline-flex gap-3 svg-list">

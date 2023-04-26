@@ -1,5 +1,5 @@
 <section class="bg-primary py-5">
-    <div class="custom-container min-vh-50">
+    <div class="container min-vh-50">
         <div class="row">
             <div class="col-lg-6">
                 <h3 class="text-start text-white display-5 fw-bolder" data-aos="fade-up" data-aos-delay="100" data-aos-duration="500">

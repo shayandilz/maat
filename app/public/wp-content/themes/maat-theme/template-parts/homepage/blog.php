@@ -1,4 +1,4 @@
-<section class="custom-container ">
+<section class="container ">
     <div class="row py-5 align-items-start min-vh-50 justify-content-center">
         <div class="col-xl-3">
             <h3 class="text-start text-primary display-5 fw-bolder" data-aos="fade-up" data-aos-delay="100"

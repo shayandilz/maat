@@ -8,6 +8,7 @@ $dark: rgba(26, 25, 29, 0.95);
 $primary: #00B3AC;
 $secondary: #F1F1F1;
 $danger: #292D73;
+$success: #000;
 //base class variables
 $transition-base: all .4s;
 $transition-fast: all .2s ease-in-out;
@@ -37,8 +38,10 @@ $stretched-link-z-index: 1;
 $link-decoration: none;
 $link-hover-decoration: none;
 $link-color: #fff;
+$nav-link-font-size:14px;
+$nav-link-color: #000;
 
-//tabs
+  //tabs
 $nav-tabs-link-active-bg: $primary;
 $nav-tabs-link-active-color:#fff;
 
@@ -52,5 +55,14 @@ $display-font-sizes:(
         4: 3.5rem,
         5: 3rem,
         6: 2.5rem
-)
+);
+
+//container
+$container-max-widths: (
+        sm: 540px,
+        md: 720px,
+        lg: 960px,
+        xl: 1140px,
+        xxl: 1530px
+);
 

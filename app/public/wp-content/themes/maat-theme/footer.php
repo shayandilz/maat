@@ -1,5 +1,5 @@
 <footer class="bg-primary">
-    <div class="custom-container">
+    <div class="container">
         <div class="row justify-content-center justify-content-lg-start py-3 py-lg-5 g-3">
             <div class="col-lg-3 d-flex justify-content-center justify-content-lg-start">
                 <a class="navbar-brand " href="<?php echo esc_url(get_home_url()) ?>">

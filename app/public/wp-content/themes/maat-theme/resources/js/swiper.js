@@ -10,6 +10,7 @@ const swiper = new Swiper('.home-swiper', {
         nextEl: '.swiper-prev',
         prevEl: '.swiper-next',
     },
+    speed: 2000,
     pagination: {
         el: '.swiper-paginate',
         type: 'fraction',
@@ -26,7 +27,7 @@ const swiper = new Swiper('.home-swiper', {
         }
     },
     autoplay: {
-        delay: 2000,
+        delay: 6000,
     },
     disableOnInteraction: false,
 })

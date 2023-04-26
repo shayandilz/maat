@@ -16,11 +16,10 @@
 
 <header id="main-header" class="w-100 lazy" <?php if (is_user_logged_in()){ echo 'style="margin-top:30px"';} ?>>
     <div class="flex-nowrap bg-white">
-
         <div class="iphone__inner d-lg-none d-block z-top position-relative">
             <div class="d-inline-flex justify-content-between align-items-center p-3 w-100 z-top position-absolute bg-white">
                 <?php get_template_part('template-parts/header-button'); ?>
-                <a class="navbar-brand me-0 me-lg-3" href="<?php echo esc_url(get_home_url()) ?>">
+                <a class="navbar-brand me-0" href="<?php echo esc_url(get_home_url()) ?>">
                     <?php
                     the_field('header_logo', 'option');
                     ?>
@@ -65,27 +64,29 @@
                 </div>
             </div>
         </div>
-        <nav class="custom-container row navbar d-none d-lg-flex lazy-slow">
+        <nav class="container d-none d-lg-block">
 
-            <div class="col-lg-6 d-none d-lg-block justify-content-start ps-0" id="navbarNav">
-                <?php
-                wp_nav_menu(array(
-                    'theme_location' => 'headerMenuLocation',
-                    'menu_class' => 'navbar-nav flex-row pe-0 gap-5 w-100 justify-content-between desktop-menu',
-                    'container' => false,
-                    'menu_id' => 'navbarTogglerMenu',
-                    'item_class' => 'nav-item',
-                    'link_class' => 'nav-link text-dark fw-bold p-0 position-relative',
-                    'depth' => 2,
-                ));
-                ?>
-            </div>
-            <div class="d-flex col-lg-6 justify-content-end align-items-center">
-                <a class="navbar-brand me-0 me-lg-3" href="<?php echo esc_url(get_home_url()) ?>">
+            <div class="row navbar lazy-slow">
+                <div class="col-lg-6 d-none d-lg-block justify-content-start " id="navbarNav">
                     <?php
-                    the_field('header_logo', 'option');
+                    wp_nav_menu(array(
+                        'theme_location' => 'headerMenuLocation',
+                        'menu_class' => 'navbar-nav flex-row pe-0 gap-5 w-100 justify-content-between desktop-menu',
+                        'container' => false,
+                        'menu_id' => 'navbarTogglerMenu',
+                        'item_class' => 'nav-item',
+                        'link_class' => 'nav-link text-success p-0 position-relative',
+                        'depth' => 2,
+                    ));
                     ?>
-                </a>
+                </div>
+                <div class="d-flex col-lg-6 justify-content-end align-items-center">
+                    <a class="navbar-brand me-0" href="<?php echo esc_url(get_home_url()) ?>">
+                        <?php
+                        the_field('header_logo', 'option');
+                        ?>
+                    </a>
+                </div>
             </div>
         </nav>
     </div>

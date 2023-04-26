@@ -8,7 +8,7 @@
  */
 get_header(); ?>
 
-    <section class="custom-container">
+    <section class="container">
         <div class="row min-vh-100 align-items-end py-5">
             <div class="col-lg-6">
                 <?php
