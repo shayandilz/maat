@@ -55,7 +55,7 @@ $loop_portfolio = new WP_Query($portfolio);
                     echo 'show active';
                 } ?>" id="cat-<?php echo $key; ?>" role="tabpanel"
                      aria-labelledby="cat-<?php echo $key; ?>-tab">
-                    <div class="row row-gap-4 justify-content-lg-start justify-content-center"
+                    <div class="row gap-4 justify-content-lg-start justify-content-center"
                          id="my-custom-post-type-container">
                         <?php
                         $args = array(

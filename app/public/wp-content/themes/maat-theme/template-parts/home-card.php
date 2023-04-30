@@ -17,7 +17,7 @@
     <div class="button-primary w-auto px-0">
         <a class="btn bg-transparent position-relative overflow-hidden fs-4" data-aos="fade-left" data-aos-delay="500" href="<?php echo get_permalink(); ?>">
             <p class="fs-6 fw-bold w-100 text-start h-100 position-absolute top-0 start-0 d-flex justify-content-center align-items-center m-0 p-0 z-top">
-                بیشتر بخوانید
+                بیشتر بدانید
             </p>
         </a>
     </div>

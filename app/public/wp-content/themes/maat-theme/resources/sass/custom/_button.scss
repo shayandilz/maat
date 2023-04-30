@@ -36,7 +36,7 @@
     width: 120px;
     height: 40px;
     transition: all 0.3s ease-in-out;
-    color: rgba(0, 0, 0, 0.50);
+    color: $text-color;
 
     &:before {
       content: "";
@@ -123,7 +123,7 @@
 
 // Define classes for different button colors
 .button-white {
-  @include dynamic-button($dark, white);
+  @include dynamic-button($white, white);
 }
 
 .button-primary {

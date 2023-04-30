@@ -12,10 +12,24 @@
       position: relative!important;
     }
   }
+  .custom-gradient{
+    background: linear-gradient(90deg,$primary 50%,$secondary 50%);
+  }
 }
 @include media-breakpoint-down(lg) {
   .custom-container{
     width: 100%;
+  }
+  .custom-gradient{
+    & > div > div > div:first-child{
+      background-color: $primary;
+    }
+    & > div > div > div:last-child{
+      background-color: $secondary;
+    }
+    & > div{
+      max-width: 100%!important;
+    }
   }
 }
 @include media-breakpoint-down(xl) {

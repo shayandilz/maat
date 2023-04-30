@@ -30,7 +30,7 @@
                         $i++;
                         setup_postdata($service); ?>
                         <li class="col-12 col-md-6" data-aos="zoom-in" data-aos-delay="<?= $i; ?>00" data-aos-duration="<?= $i; ?>00">
-                            <div class="bg-secondary py-4 px-2 d-flex align-items-center justify-content-center gap-3 h-100">
+                            <div class="bg-secondary py-4 px-2 d-flex align-items-center justify-content-evenly gap-3 h-100">
                                 <div class="border-end border-danger border-opacity-50 pe-3">
                                     <?php the_field('services_svg_icon', $service->ID);?>
                                 </div>

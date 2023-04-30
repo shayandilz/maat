@@ -194,13 +194,42 @@
 }
 
 //form
+.gf_progressbar_title{
+  @extend .text-dark,.fs-3,.fw-bold;
+}
+.gf_progressbar{
+  border-radius: 0px!important;
+  .gf_progressbar_percentage{
+    background-color: #00B3AC!important;
+    border-radius: 0px!important;
+  }
+}
 .gform_wrapper.gravity-theme .gform_fields{
   grid-row-gap: 2px!important;
 }
-#gform_fields_1 input,
-#gform_fields_1 textarea{
+.page-template-work input[type="submit"]{
+
+}
+input,
+textarea{
   @extend .form-control;
 }
-.gform_footer input[type="submit"]{
-  @extend .btn,.btn-primary, .border-1,.border-primary,.rounded-0;
+select{
+  @extend .form-select;
+}
+.gform_validation_errors{
+  @extend .d-none;
+}
+.gform_confirmation_wrapper_3{
+  @extend .d-flex,.justify-content-center,.fs-2, .py-4;
+}
+input[type="button"],
+input[type="submit"],{
+  @extend .btn, .btn-primary, .border-1,.border-primary, .rounded-0;
+  width: auto!important;
+}
+#ui-datepicker-div{
+  top: 50%!important;
+  left: 50%!important;
+  transform: translate(-50%,-50%);
 }

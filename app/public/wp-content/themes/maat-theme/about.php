@@ -40,7 +40,7 @@ get_header(); ?>
             </div>
         </div>
     </section>
-    <section class="py-5 custom-container">
+    <section class="py-5 container">
         <h3 class="text-start text-primary fs-1 fw-semibold mb-4">
             <?php the_field('section_1_title'); ?>
 
@@ -50,62 +50,64 @@ get_header(); ?>
 
         </div>
     </section>
-    <section class="mt-3 d-flex flex-column flex-lg-row">
-        <div class="bg-primary col-lg-6 col-12 d-flex align-items-center py-3 py-lg-0">
-            <div class="custom-container">
-                <div class="row align-items-center align-items-lg-start py-lg-5">
-                    <div class="col-lg-6  border-end border-secondary border-1 border-opacity-50 ps-lg-5">
-                        <?php if (have_rows('box_1')): ?>
-                            <?php while (have_rows('box_1')): the_row();
-                                $title = get_sub_field('title');
-                                $text = get_sub_field('text');
-                                ?>
-                                <h6 class="text-center text-lg-start text-white fs-1 fw-semibold pb-4">
-                                    <?= $title; ?>
-                                </h6>
-                                <div class="text-white text-center text-lg-start">
-                                    <?= $text; ?>
-                                </div>
-                            <?php endwhile; ?>
-                        <?php endif; ?>
+    <section class="mt-3 custom-gradient">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-12 d-flex align-items-center py-3 py-lg-0 justify-content-center justify-content-lg-start">
+                    <div class="row align-items-center align-items-lg-start justify-content-center py-lg-5">
+                        <div class="col-lg col-12">
+                            <?php if (have_rows('box_1')): ?>
+                                <?php while (have_rows('box_1')): the_row();
+                                    $title = get_sub_field('title');
+                                    $text = get_sub_field('text');
+                                    ?>
+                                    <h6 class="text-center text-lg-start text-white fs-1 fw-semibold pb-lg-4">
+                                        <?= $title; ?>
+                                    </h6>
+                                    <div class="text-white text-center text-lg-start">
+                                        <?= $text; ?>
+                                    </div>
+                                <?php endwhile; ?>
+                            <?php endif; ?>
 
-                    </div>
-                    <div class="col-lg-6 ps-lg-5">
-                        <?php if (have_rows('box_2')): ?>
-                            <?php while (have_rows('box_2')): the_row();
-                                $title = get_sub_field('title');
-                                $text = get_sub_field('text');
-                                ?>
-                                <h6 class="text-center text-lg-start text-white fs-1 fw-semibold pb-4">
-                                    <?= $title; ?>
-                                </h6>
-                                <div class="text-white text-center text-lg-start">
-                                    <?= $text; ?>
-                                </div>
-                            <?php endwhile; ?>
-                        <?php endif; ?>
+                        </div>
+                        <div class="vr px-0 bg-secondary bg-opacity-75 d-lg-block d-none"></div>
+                        <hr class="px-0 text-secondary bg-opacity-75 d-lg-none w-50">
+                        <div class="col-lg col-12 ps-lg-5">
+                            <?php if (have_rows('box_2')): ?>
+                                <?php while (have_rows('box_2')): the_row();
+                                    $title = get_sub_field('title');
+                                    $text = get_sub_field('text');
+                                    ?>
+                                    <h6 class="text-center text-lg-start text-white fs-1 fw-semibold pb-lg-4">
+                                        <?= $title; ?>
+                                    </h6>
+                                    <div class="text-white text-center text-lg-start">
+                                        <?= $text; ?>
+                                    </div>
+                                <?php endwhile; ?>
+                            <?php endif; ?>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="bg-secondary col-lg-6 col-12 d-flex align-items-center py-3 py-lg-0">
-            <div class="custom-container p-lg-0">
-                <div class="row align-items-center">
-                    <div class="col-lg-12 py-lg-5 border-end border-secondary border-1 border-opacity-50 pe-lg-5">
-                        <?php if (have_rows('box_3')): ?>
-                            <?php while (have_rows('box_3')): the_row();
-                                $title = get_sub_field('title');
-                                $text = get_sub_field('text');
-                                ?>
-                                <h6 class="text-start text-primary fs-1 fw-semibold mb-4">
-                                    <?= $title; ?>
-                                </h6>
-                                <div class="text-dark text-justify">
-                                    <?= $text; ?>
-                                </div>
-                            <?php endwhile; ?>
-                        <?php endif; ?>
+                <div class="col-lg-6 col-12 d-flex align-items-center py-3 py-lg-0 justify-content-center justify-content-lg-start">
+                    <div class="row align-items-center">
+                        <div class="col-lg-12 ps-lg-4 py-lg-5 border-end border-secondary border-1 border-opacity-50">
+                            <?php if (have_rows('box_3')): ?>
+                                <?php while (have_rows('box_3')): the_row();
+                                    $title = get_sub_field('title');
+                                    $text = get_sub_field('text');
+                                    ?>
+                                    <h6 class="text-center text-lg-start text-primary fs-1 fw-semibold mb-4">
+                                        <?= $title; ?>
+                                    </h6>
+                                    <div class="text-dark text-justify">
+                                        <?= $text; ?>
+                                    </div>
+                                <?php endwhile; ?>
+                            <?php endif; ?>
 
+                        </div>
                     </div>
                 </div>
             </div>
@@ -120,7 +122,7 @@ get_header(); ?>
                  alt="<?php echo esc_attr($section_2_image['alt']); ?>"/>
         <?php endif; ?>
     </section>
-    <section class="custom-container py-5">
+    <section class="container py-5">
         <div class="row">
             <div class="col-lg-6">
                 <h3 class="text-start text-danger fs-1 fw-semibold mb-4">
@@ -152,7 +154,7 @@ get_header(); ?>
                             </div>
                         </div>
                     </div>
-                <? endwhile;
+                <?php endwhile;
             endif; ?>
         </div>
     </section>

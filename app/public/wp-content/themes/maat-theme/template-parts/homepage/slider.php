@@ -16,21 +16,8 @@
                     <?php endif; ?>
                 </div>
             </div>
-            <div class="row pt-1 justify-content-between align-items-center">
-                <div class="col-6 d-flex justify-content-start gap-3 text-primary fs-4">
-                    <div class="swiper-next" data-aos="fade-left" data-aos-delay="300" data-aos-offset="0">
-                        <?php get_template_part('template-parts/svg/right-arrow'); ?>
-                    </div>
-                    <div class="swiper-prev" data-aos="fade-right" data-aos-delay="300" data-aos-offset="0">
-                        <?php get_template_part('template-parts/svg/left-arrow'); ?>
-                    </div>
-                </div>
-                <div class="col-6" data-aos="fade-up" data-aos-delay="400" data-aos-offset="0">
-                    <div class="swiper-paginate d-flex justify-content-end sofia gap-1 align-items-center fw-light"></div>
-                </div>
-            </div>
         </div>
-        <div class="col-lg-6 col-12 gap-lg-5 gap-3 d-flex flex-column justify-content-center mt-lg-0 mt-5">
+        <div class="col-lg-6 col-12 gap-lg-5 gap-3 d-flex flex-column justify-content-end mt-lg-0 mt-5">
             <div class="row justify-content-end">
                 <div class="col-12">
                     <h1 class="text-center fs-6" data-aos="fade-up" data-aos-delay="300" >
@@ -56,6 +43,21 @@
                         </a>
                     </div>
                 <?php endif; ?>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="row pt-1 justify-content-between align-items-center">
+                <div class="col-6 d-flex justify-content-start gap-3 text-primary fs-4">
+                    <div class="swiper-next" data-aos="fade-left" data-aos-delay="300" data-aos-offset="0">
+                        <?php get_template_part('template-parts/svg/right-arrow'); ?>
+                    </div>
+                    <div class="swiper-prev" data-aos="fade-right" data-aos-delay="300" data-aos-offset="0">
+                        <?php get_template_part('template-parts/svg/left-arrow'); ?>
+                    </div>
+                </div>
+                <div class="col-6" data-aos="fade-up" data-aos-delay="400" data-aos-offset="0">
+                    <div class="swiper-paginate d-flex justify-content-end sofia gap-1 align-items-center fw-light"></div>
+                </div>
             </div>
         </div>
     </div>

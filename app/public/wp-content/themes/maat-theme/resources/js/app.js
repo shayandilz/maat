@@ -17,7 +17,7 @@ $(document).ready(function () {
     })
     function resizeForm(){
         var width = (window.innerWidth > 0) ? window.innerWidth : document.documentElement.clientWidth;
-        if(width > 1024 && !$("body").is(".post-type-archive-portfolio")){
+        if(width > 1024 && !$("body").is(".post-type-archive-portfolio") && !$("body").is(".page-template-work")){
             require('./smoothscroll');
         } else {
 
@@ -144,6 +144,7 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('scroll', function () {
         toggleScrollClass();
     });
+
 
 });
 
