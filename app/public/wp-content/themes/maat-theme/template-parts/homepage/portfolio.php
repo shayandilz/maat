@@ -2,7 +2,7 @@
     <div class="container min-vh-50">
         <div class="row">
             <div class="col-lg-6">
-                <h3 class="text-start text-white display-5 fw-bolder" data-aos="fade-up" data-aos-delay="100" data-aos-duration="500">
+                <h3 class="text-start text-white display-5 fw-bolder sofia text-uppercase" data-aos="fade-up" data-aos-delay="100" data-aos-duration="500">
                     <?= get_field('portfolio_section_title') ?>
                 </h3>
             </div>
@@ -12,10 +12,8 @@
                 $portfolio_button = get_field('portfolio_button');
                 if( $portfolio_button ): ?>
                     <div class="button-white w-auto px-0">
-                        <a class="btn bg-transparent position-relative overflow-hidden fs-4" data-aos="fade-left" data-aos-delay="500" href="<?php echo esc_url( $portfolio_button['link'] ); ?>">
-                            <p class="fs-6 fw-bold w-100 text-start h-100 position-absolute top-0 start-0 d-flex justify-content-center align-items-center m-0 p-0 z-top">
-                                <?php echo esc_html( $portfolio_button['title'] ); ?>
-                            </p>
+                        <a class="btn bg-transparent position-relative fs-6 p-0" data-aos="fade-left" data-aos-delay="500" href="<?php echo esc_url( $portfolio_button['link'] ); ?>">
+                            <?php echo esc_html( $portfolio_button['title'] ); ?>
                         </a>
                     </div>
                 <?php endif; ?>

@@ -3,7 +3,7 @@
 
 get_header(); ?>
 
-    <section class="pt-5 min-vh-100">
+    <section class="pt-5 min-vh-100 mt-5">
         <div class="container">
             <h1 class="text-end text-primary display-1 text-uppercase sofia fw-bolder lh-sm mt-5 mb-0">
                 Blog <br>
@@ -35,7 +35,7 @@ get_header(); ?>
                 <nav aria-label="age navigation example text-dark">
                     <?php echo '<ul class="pagination gap-3 justify-content-center align-items-center flex-row-reverse mb-0">';
                     // get_previous_posts_link will return a string or void if no link is set.
-                    if ($prev_posts_link = get_previous_posts_link(__('قبلی'))) :
+                    if ($prev_posts_link = get_previous_posts_link(__('>'))) :
                         echo '<li class="prev-list-item page-item">';
                         echo $prev_posts_link;
                         echo '</li>';
@@ -45,7 +45,7 @@ get_header(); ?>
                     echo '</li>';
 
                     // get_next_posts_link will return a string or void if no link is set.
-                    if ($next_posts_link = get_next_posts_link(__('بعدی'))) :
+                    if ($next_posts_link = get_next_posts_link(__('<'))) :
                         echo '<li class="next-list-item page-item">';
                         echo $next_posts_link;
                         echo '</li>';

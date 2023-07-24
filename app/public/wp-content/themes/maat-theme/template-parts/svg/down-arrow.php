@@ -1,4 +1,4 @@
-<svg width="25px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24.52 25.68">
+<svg class="svgDown" width="25px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24.52 25.68">
     <defs>
         <style>.down-arrow {
                 fill: none;

@@ -1,7 +1,7 @@
 <section class="bg-secondary">
     <div class="container">
         <div class="row pt-5 align-items-start min-vh-50 justify-content-center">
-            <h3 class="text-center text-primary display-5 fw-bolder" data-aos="fade-up" data-aos-delay="100"
+            <h3 class="text-center text-primary display-5 fw-bolder sofia text-uppercase" data-aos="fade-up" data-aos-delay="100"
                 data-aos-duration="500">
                 <?= get_field('client_section_title') ?>
             </h3>
@@ -34,10 +34,10 @@
                     </div>
                 </div>
                 <div class="col-lg-12 d-flex justify-content-center gap-3 text-primary mt-5 fs-3">
-                    <div class="swiper-next-client" data-aos="fade-left" data-aos-delay="300">
+                    <div class="swiper-next-client" data-aos="fade-left" data-aos-delay="300" data-aos-offset="0">
                         <?php get_template_part('template-parts/svg/right-arrow'); ?>
                     </div>
-                    <div class="swiper-prev-client" data-aos="fade-right" data-aos-delay="300">
+                    <div class="swiper-prev-client" data-aos="fade-right" data-aos-delay="300" data-aos-offset="0">
                         <?php get_template_part('template-parts/svg/left-arrow'); ?>
                     </div>
                 </div>

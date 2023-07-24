@@ -10,11 +10,9 @@ function theme_scripts()
     wp_enqueue_style('Ravi', get_template_directory_uri() . '/public/fonts/Ravi/fontface.css', array());
     wp_enqueue_style('Sofia', get_template_directory_uri() . '/public/fonts/Sofia/fontface.css', array());
     wp_enqueue_style('icons', get_template_directory_uri() . '/public/fonts/icons/fontface.css', array());
-
     wp_enqueue_style('style', get_stylesheet_directory_uri() . '/public/css/style.css', array(),);
-
     wp_enqueue_script('main-js', get_template_directory_uri() . '/public/js/app.js', array(), true);
-
+    wp_enqueue_script('snap-js', get_template_directory_uri() . '/public/js/snap.svg-min.js', array(), true);
 }
 
 add_action('wp_enqueue_scripts', 'theme_scripts');
@@ -117,7 +115,7 @@ function acf_populate_gf_forms_ids($field)
     return $field;
 }
 
- add_filter('acf/load_field/name=gravity_choices', 'acf_populate_gf_forms_ids');
+add_filter('acf/load_field/name=gravity_choices', 'acf_populate_gf_forms_ids');
 
 
 // helper function to find a menu item in an array of items
@@ -411,7 +409,8 @@ function toc_shortcode()
 add_shortcode('TOC', 'toc_shortcode');
 //estimated reading time
 
-function reading_time() {
+function reading_time()
+{
     ob_start();
     the_content();
     $content = ob_get_clean();
@@ -419,3 +418,4 @@ function reading_time() {
 
     return $readingtime;
 }
+

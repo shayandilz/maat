@@ -17,22 +17,21 @@ get_header(); ?>
             <div class="col-lg-6 gap-5 d-flex flex-column justify-content-center">
                 <div class="row justify-content-center">
                     <div class="col-12 col-lg-11">
-                        <h3 class="text-center fs-6">
-                            <?php the_field('hero_small_text'); ?>
-
-                        </h3>
-                        <h1 class="text-center display-1 sofia text-primary text-uppercase fw-semibold">
+                        <h1 class="text-center display-1 sofia text-primary text-uppercase fw-semibold"
+                            data-aos="fade-up"
+                            data-aos-delay="400"
+                            data-aos-duration="2000">
                             <?php the_field('hero_title'); ?>
                         </h1>
                     </div>
                 </div>
                 <div class="row flex-column">
-                    <div class="col-lg-6">
-                        <h4 class="text-start mb-2 fs-3 text-primary text-uppercase fw-semibold ">
+                    <div class="col-12">
+                        <h4 class="text-start mb-2 fs-3 text-primary text-uppercase fw-semibold sofia" data-aos="fade-left" data-aos-delay="200">
                             <?php single_post_title(); ?>
                         </h4>
 
-                        <div class="text-justify fs-6">
+                        <div class="text-justify fs-6" data-aos="fade-left" data-aos-delay="400">
                             <?php the_content(); ?>
                         </div>
                     </div>
@@ -41,67 +40,30 @@ get_header(); ?>
         </div>
     </section>
     <section class="py-5 container">
-        <h3 class="text-start text-primary fs-1 fw-semibold mb-4">
+        <h3 class="text-start text-primary fs-1 fw-semibold mb-4 sofia text-uppercase" data-aos="fade-up" data-aos-delay="100">
             <?php the_field('section_1_title'); ?>
 
         </h3>
-        <div class="text-justify fs-6">
+        <div class="text-justify fs-6" data-aos="fade-up" data-aos-delay="200">
             <?php the_field('section_1_text'); ?>
 
         </div>
     </section>
-    <section class="mt-3 custom-gradient">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6 col-12 d-flex align-items-center py-3 py-lg-0 justify-content-center justify-content-lg-start">
-                    <div class="row align-items-center align-items-lg-start justify-content-center py-lg-5">
-                        <div class="col-lg col-12">
-                            <?php if (have_rows('box_1')): ?>
-                                <?php while (have_rows('box_1')): the_row();
-                                    $title = get_sub_field('title');
-                                    $text = get_sub_field('text');
-                                    ?>
-                                    <h6 class="text-center text-lg-start text-white fs-1 fw-semibold pb-lg-4">
-                                        <?= $title; ?>
-                                    </h6>
-                                    <div class="text-white text-center text-lg-start">
-                                        <?= $text; ?>
-                                    </div>
-                                <?php endwhile; ?>
-                            <?php endif; ?>
-
-                        </div>
-                        <div class="vr px-0 bg-secondary bg-opacity-75 d-lg-block d-none"></div>
-                        <hr class="px-0 text-secondary bg-opacity-75 d-lg-none w-50">
-                        <div class="col-lg col-12 ps-lg-5">
-                            <?php if (have_rows('box_2')): ?>
-                                <?php while (have_rows('box_2')): the_row();
-                                    $title = get_sub_field('title');
-                                    $text = get_sub_field('text');
-                                    ?>
-                                    <h6 class="text-center text-lg-start text-white fs-1 fw-semibold pb-lg-4">
-                                        <?= $title; ?>
-                                    </h6>
-                                    <div class="text-white text-center text-lg-start">
-                                        <?= $text; ?>
-                                    </div>
-                                <?php endwhile; ?>
-                            <?php endif; ?>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-12 d-flex align-items-center py-3 py-lg-0 justify-content-center justify-content-lg-start">
+    <section class="bg-warning">
+        <div class="container py-3 py-lg-0">
+            <div class="row align-items-center">
+                <div class="col-12 d-flex align-items-center justify-content-center justify-content-lg-start">
                     <div class="row align-items-center">
-                        <div class="col-lg-12 ps-lg-4 py-lg-5 border-end border-secondary border-1 border-opacity-50">
+                        <div class="col-lg-12 ps-lg-4 py-lg-5 " data-aos="fade-in" data-aos-delay="300">
                             <?php if (have_rows('box_3')): ?>
                                 <?php while (have_rows('box_3')): the_row();
                                     $title = get_sub_field('title');
                                     $text = get_sub_field('text');
                                     ?>
-                                    <h6 class="text-center text-lg-start text-primary fs-1 fw-semibold mb-4">
+                                    <h6 class="text-center text-lg-start text-primary text-primary sofia text-uppercase fs-1 fw-semibold mb-4">
                                         <?= $title; ?>
                                     </h6>
-                                    <div class="text-dark text-justify">
+                                    <div class="text-dark text-justify text-white">
                                         <?= $text; ?>
                                     </div>
                                 <?php endwhile; ?>
@@ -113,44 +75,83 @@ get_header(); ?>
             </div>
         </div>
     </section>
-    <section class="mb-5">
-        <?php
-        $section_2_image = get_field('section_2_image');
-        if (!empty($section_2_image)): ?>
-            <img class="img-fluid w-100"
-                 src="<?php echo esc_url($section_2_image['url']); ?>"
-                 alt="<?php echo esc_attr($section_2_image['alt']); ?>"/>
-        <?php endif; ?>
+    <section class="bg-primary">
+        <div class="container">
+            <div class="row align-items-center align-items-lg-start justify-content-center py-lg-5">
+                <div class="col-lg col-12" data-aos="fade-in" data-aos-delay="100">
+                    <?php if (have_rows('box_1')): ?>
+                        <?php while (have_rows('box_1')): the_row();
+                            $title = get_sub_field('title');
+                            $text = get_sub_field('text');
+                            ?>
+                            <h6 class="text-center text-lg-start text-warning fs-1 fw-semibold pb-lg-4 sofia text-uppercase">
+                                <?= $title; ?>
+                            </h6>
+                            <div class="text-white text-center text-lg-start">
+                                <?= $text; ?>
+                            </div>
+                        <?php endwhile; ?>
+                    <?php endif; ?>
+
+                </div>
+                <div class="col-lg col-12 ps-lg-5" data-aos="fade-in" data-aos-delay="200">
+                    <?php if (have_rows('box_2')): ?>
+                        <?php while (have_rows('box_2')): the_row();
+                            $title = get_sub_field('title');
+                            $text = get_sub_field('text');
+                            ?>
+                            <h6 class="text-center text-lg-start text-warning fs-1 fw-semibold pb-lg-4 sofia text-uppercase">
+                                <?= $title; ?>
+                            </h6>
+                            <div class="text-white text-center text-lg-start">
+                                <?= $text; ?>
+                            </div>
+                        <?php endwhile; ?>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="my-5 container" data-aos="fade-in" data-aos-delay="100">
+        <div class="row g-5 justify-content-center">
+            <?php
+            $section_2_image = get_field('section_2_image');
+            if (!empty($section_2_image)): ?>
+                <?php
+                if (have_rows('section_2_image')):
+                    $i = 0;
+                    while (have_rows('section_2_image')) : the_row();
+                        $i++;
+                        $svg = get_sub_field('svg'); ?>
+                        <div class="col-lg col-6" data-aos="zoom-in" data-aos-delay="<?= $i; ?>00">
+                            <?= $svg; ?>
+                        </div>
+                    <?php endwhile;
+                endif; ?>
+            <?php endif; ?>
+        </div>
     </section>
     <section class="container py-5">
         <div class="row">
-            <div class="col-lg-6">
-                <h3 class="text-start text-danger fs-1 fw-semibold mb-4">
+            <div class="col-12">
+                <h3 class="text-center text-primary fs-1 fw-semibold mb-4 sofia text-uppercase" data-aos="fade-left" data-aos-delay="100">
                     <?php the_field('section_3_title'); ?>
 
                 </h3>
             </div>
-            <div class="col-lg-6">
-                <div class="text-dark text-justify">
-                    <?php the_field('section_3_text'); ?>
-                </div>
-            </div>
         </div>
-        <div class="row">
+        <div class="row mt-3">
             <?php
             if (have_rows('achievements')):
+                $i = 0;
                 while (have_rows('achievements')) : the_row();
+                    $i++;
                     $title = get_sub_field('title');
                     $image = get_sub_field('image'); ?>
-                    <div class="col-lg-3">
-                        <div class="card border-0">
+                    <div class="col-lg-3" data-aos="zoom-in" data-aos-delay="<?= $i; ?>00">
+                        <div class="card border-0 bg-warning rounded-0 p-5">
                             <div class="p-5">
-                                <img src="<?= $image['url']; ?>" class="card-img-top" alt="<?= $image['alt']; ?>">
-                            </div>
-                            <div class="card-body py-lg-5 bg-secondary text-center">
-                                <h6 class="card-text">
-                                    "<?= $title; ?>
-                                </h6>
+<!--                                <img src="--><?php //= $image['url']; ?><!--" class="card-img-top" alt="--><?php //= $image['alt']; ?><!--">-->
                             </div>
                         </div>
                     </div>

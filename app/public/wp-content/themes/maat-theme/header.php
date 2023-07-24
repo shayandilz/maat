@@ -14,7 +14,9 @@
 
 <body <?php body_class(); ?>>
 
-<header id="main-header" class="w-100 lazy" <?php if (is_user_logged_in()){ echo 'style="margin-top:30px"';} ?>>
+<header <?php echo is_page_template( 'landing.php') ? 'style="display:none;"' : ''; ?> id="main-header" class="w-100 lazy" <?php if (is_user_logged_in()) {
+    echo 'style="margin-top:30px"';
+} ?>>
     <div class="flex-nowrap bg-white">
         <div class="iphone__inner d-lg-none d-block z-top position-relative">
             <div class="d-inline-flex justify-content-between align-items-center p-3 w-100 z-top position-absolute bg-white">
@@ -91,7 +93,16 @@
         </nav>
     </div>
 </header>
-
+<?php
+if (is_single() && get_post_type() == 'post') { ?>
+    <div class="position-fixed w-100" style="top: 68px;z-index: 2">
+        <!-- Add this to your HTML file -->
+        <div class="progress">
+            <div class="progress-bar " role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0"
+                 aria-valuemax="100"></div>
+        </div>
+    </div>
+<?php } ?>
 <main>
 
 

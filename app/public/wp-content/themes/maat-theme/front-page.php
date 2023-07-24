@@ -11,7 +11,7 @@ get_header();
 if (have_posts()) {
     the_post();
 //    slider
-    get_template_part('template-parts/homepage/slider');
+    get_template_part('template-parts/homepage/hero');
 //    services
     get_template_part('template-parts/homepage/services');
 //    portfolio

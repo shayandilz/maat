@@ -1,7 +1,10 @@
+import {set} from "lodash/object";
+
 require('./bootstrap');
 import $ from "jquery";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
+import VanillaTilt from 'vanilla-tilt';
 
 $(document).ready(function () {
 
@@ -9,34 +12,41 @@ $(document).ready(function () {
         if ($(document).scrollTop() > 30) { // check if user scrolled more than 50 from top of the browser window
             $('.backTo_Top').removeClass('outro');
             $('.backTo_Top').addClass('intro');
-        }
-        else if ($(document).scrollTop() == 0) {
+        } else if ($(document).scrollTop() == 0) {
             $('.backTo_Top').addClass('outro');
             $('.backTo_Top').removeClass('intro');
         }
     })
-    function resizeForm(){
+
+    function resizeForm() {
         var width = (window.innerWidth > 0) ? window.innerWidth : document.documentElement.clientWidth;
-        if(width > 1024 && !$("body").is(".post-type-archive-portfolio") && !$("body").is(".page-template-work")){
+        if (width > 1024 && !$("body").is(".post-type-archive-portfolio") &&
+            !$("body").is(".page-template-work") &&
+            !$("body").is(".page-template-landing") &&
+            !$("body").is(".single-post ")
+        ) {
             require('./smoothscroll');
         } else {
 
         }
     }
+
     window.onresize = resizeForm;
     resizeForm();
 })
 
+
 document.addEventListener('DOMContentLoaded', function () {
-
-
     require('./swiper');
-    // const svgList = document.querySelectorAll(".svg-list path");
-    //
-    // svgList.forEach((svg, index) => {
-    //     svg.classList.add("draw-anim");
-    //     svg.style.setProperty("--animation-delay", `${index * 0.5}s`);
-    // });
+
+    // tilting the modal card
+    VanillaTilt.init(document.querySelectorAll(".glass-card"), {
+        max: 1,
+        speed: 100,
+    });
+
+    // AOS
+    AOS.init();
 
     // expand element height
     const expandBtns = document.querySelectorAll(".expandButton");
@@ -90,16 +100,20 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    function handleMediaQuery(mq) {
+        const elements = document.querySelectorAll(".my-list-item");
+        if (mq.matches) {
+            // Loop through each element and set its height equal to its width
+            elements.forEach((element) => {
+                const width = element.offsetWidth - 40;
+                element.style.height = width + "px";
+            });
+        }
+    }
 
-// Loop through each element and set its height equal to its width
-    const elements = document.querySelectorAll(".my-list-item");
-    elements.forEach((element) => {
-        const width = element.offsetWidth;
-        element.style.height = width + "px";
-    });
-
-    // AOS
-    AOS.init();
+    var mq = window.matchMedia("(min-width: 768px)");
+    mq.addListener(handleMediaQuery);
+    handleMediaQuery(mq); // Call once on page load
 
 
     // svg draw
@@ -107,6 +121,14 @@ document.addEventListener('DOMContentLoaded', function () {
     if (svg) {
         svg.classList.add('draw');
     }
+
+    const svgList = document.querySelectorAll(".svg-service svg");
+    svgList.forEach((svg, index) => {
+        setTimeout(() => {
+            svg.classList.add("drawServices");
+        }, index * 10); // multiply index by 2 to add a 2 millisecond delay between each iteration
+    });
+
 
     // menu
     const nav = {
@@ -144,6 +166,40 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('scroll', function () {
         toggleScrollClass();
     });
+
+// Add this script to the bottom of your HTML file or in a separate JS file
+    const progressBar = document.querySelector(".progress-bar");
+    const blog = document.querySelector("#blog");
+    if (blog) {
+        window.addEventListener("scroll", () => {
+            // Get the distance of the user from the top of the blog
+            const scrollTop = window.pageYOffset;
+            const blogTop = blog.offsetTop;
+            const blogHeight = blog.offsetHeight;
+            const scrolled = (scrollTop - blogTop) / (blogHeight - window.innerHeight) * 100;
+
+            // Update the progress bar width and aria-valuenow attribute
+            progressBar.style.width = `${scrolled}%`;
+            progressBar.setAttribute("aria-valuenow", scrolled);
+        });
+    }
+
+
+
+    const MaskText = document.querySelector('#section2 > div');
+    if (MaskText){
+        var letterToZoom = document.getElementById('mask-text'); // first letter
+        MaskText.style.opacity = '0';
+        setTimeout(function () {
+            document.querySelector('#section2 > div').style.opacity = '1';
+            setTimeout(function () {
+                letterToZoom.style.transform = 'scale(25)';
+                document.getElementById('mask-text').style.opacity = '0';
+                document.querySelector('#section2 > div').style.zIndex = '10';
+
+            }, 400)
+        }, 4500)
+    }
 
 
 });

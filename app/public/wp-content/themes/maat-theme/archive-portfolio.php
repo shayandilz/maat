@@ -9,8 +9,8 @@ $portfolio = array(
 $loop_portfolio = new WP_Query($portfolio);
 ?>
 
-    <section class="py-5 container min-vh-100 mt-5 mt-lg-0">
-        <ul class="nav nav-tabs border-bottom-0 justify-content-lg-center gap-4 flex-nowrap overflow-tab overflow-x-scroll overflow-y-hidden mt-5 my-lg-5"
+    <section class="py-5 container min-vh-100 mt-5">
+        <ul class="nav nav-tabs border-bottom-0 justify-content-lg-between gap-4 flex-nowrap overflow-tab overflow-x-scroll overflow-y-hidden mt-5 mb-lg-4 mt-lg-5 portfolio-nav-item"
             id="myTab"
             role="tablist">
 
@@ -30,8 +30,8 @@ $loop_portfolio = new WP_Query($portfolio);
             $s = 0;
             $i = 0;
             foreach ($cats as $key => $cat) { ?>
-                <li class="nav-item" role="presentation">
-                    <button class="px-lg-5 py-lg-4 filterPortfolio fs-5 rounded-0 lazy text-center border-0 position-relative d-inline-block nav-link <?php if ($i == 0) {
+                <li class="nav-item w-100" role="presentation">
+                    <button class="px-lg-4 py-lg-4 filterPortfolio fs-6 rounded-0 lazy text-center border-0 position-relative d-inline-block w-100 nav-link <?php if ($i == 0) {
                         $i = 1;
                         echo 'active';
                     } ?>"
@@ -55,7 +55,7 @@ $loop_portfolio = new WP_Query($portfolio);
                     echo 'show active';
                 } ?>" id="cat-<?php echo $key; ?>" role="tabpanel"
                      aria-labelledby="cat-<?php echo $key; ?>-tab">
-                    <div class="row gap-4 justify-content-lg-start justify-content-center"
+                    <div class="row gap-4 justify-content-center"
                          id="my-custom-post-type-container">
                         <?php
                         $args = array(
@@ -95,28 +95,44 @@ $loop_portfolio = new WP_Query($portfolio);
                                              title="<?php the_title(); ?>"
                                              alt="<?php the_title(); ?>">
                                     </div>
-                                    <?php if ($i == 1 || $i == 2 || $i == 3) { ?>
+                                    <?php if ($i == 1) { ?>
                                         <!--  showing year / brand name and client   -->
                                         <div class="my-lg-5 mb-3 mt-2 col-lg-6 d-flex flex-column align-items-start gap-3 order-3 order-lg-2">
 
                                             <?php
                                             $featured_post = get_field('client');
                                             if ($featured_post) { ?>
-                                                <div class="d-inline-flex gap-3 align-items-center">
+                                                <div class="d-inline-flex gap-3 align-items-center  w-100 pb-2">
+                                                    <h3 class="mb-0 product-placeholder"><?php echo esc_html($featured_post->post_title); ?></h3>
+                                                    <span class="sofia text-primary fs-5 fw-medium text-uppercase"> / <?php the_field('brand_in_english'); ?></span>
+                                                </div>
+                                            <?php } else {
+                                                echo '';
+                                            }; ?>
+                                        </div>
+                                    <?php } ?>
+                                    <?php if ($i == 2 || $i == 3 ) { ?>
+                                        <!--  showing year / brand name and client   -->
+                                        <div class="my-lg-5 mb-3 mt-2 col-lg-12 d-flex flex-column align-items-start gap-3 order-3 order-lg-2 px-0">
+
+                                            <?php
+                                            $featured_post = get_field('client');
+                                            if ($featured_post) { ?>
+                                                <div class="d-inline-flex gap-3 align-items-center  w-100 pb-2">
                                                     <h3 class="mb-0"><?php echo esc_html($featured_post->post_title); ?></h3>
                                                     <span class="sofia text-primary fs-5 fw-medium text-uppercase"> / <?php the_field('brand_in_english'); ?></span>
                                                 </div>
                                             <?php } else {
                                                 echo '';
                                             }; ?>
-                                            <div>
-                                                <h4 class="fs-6">
-                                                    مشتری/ <?php the_title(); ?>
-                                                </h4>
-                                                <h6 class="fs-6">
-                                                    سال تولید اثر/ <?php the_field('year'); ?>
-                                                </h6>
-                                            </div>
+<!--                                            <div class="w-100">-->
+<!--                                                <h4 class="fs-6  pb-2">-->
+<!--                                                    مشتری/ --><?php //the_title(); ?>
+<!--                                                </h4>-->
+<!--                                                <h6 class="fs-6  pb-2">-->
+<!--                                                    سال تولید اثر/ --><?php //the_field('year'); ?>
+<!--                                                </h6>-->
+<!--                                            </div>-->
                                         </div>
                                     <?php } ?>
                                     <?php if ($i == 1) { ?>
