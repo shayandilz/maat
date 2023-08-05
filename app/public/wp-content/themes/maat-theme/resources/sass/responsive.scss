@@ -1,4 +1,40 @@
 @include media-breakpoint-up(lg) {
+  .swiper-pagination-total {
+    font-size: 45px !important;
+  }
+  .swiper-pagination-current {
+    font-size: 40px !important;
+  }
+  .progress-container {
+    top:70px;
+  }
+  .portfolio-card {
+    .play_button {
+        top: 150%;
+    }
+    &:hover {
+      .play_button {
+        top: 50%;
+      }
+    }
+  }
+  .card-image {
+    & ,.card-image , .post-number {
+      transition: all 0.3s linear;
+    }
+    &:hover {
+      background: $danger;
+      .card-title {
+        color:white;
+      }
+      .post-number {
+        color: $primary;
+      }
+    }
+  }
+  .gap {
+    height: 110px;
+  }
   .supah-scroll {
     position: fixed;
     z-index: 1;
@@ -17,6 +53,38 @@
   }
 }
 @include media-breakpoint-down(lg) {
+  .portfolio-dialog {
+    transform: translateY(-50%) !important;
+    top:50%;
+  }
+  .swiper-pagination-current {
+    font-size: 30px !important;
+  }
+  .swiper-pagination-total {
+    font-size: 35px !important;
+  }
+  .progress-container {
+    top:80px;
+  }
+  .post-number {
+    font-size: 4.5rem;
+  }
+  .card-title {
+    font-size: 2.2rem !important;
+  }
+  .portfolio-card {
+    .play_button {
+      top: 50%;
+    }
+  }
+  .card-image {
+    .post-number {
+      color: $danger;
+    }
+  }
+  .gap {
+    height: 90px;
+  }
   .custom-container{
     width: 100%;
   }
@@ -33,6 +101,11 @@
   }
 }
 @include media-breakpoint-down(xl) {
+}
+@media all and (min-width:1960px)  {
+  .container {
+    max-width:80vw!important;
+  }
 }
 @include media-breakpoint-down(sm) {
   .fs-1 {

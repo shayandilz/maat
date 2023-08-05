@@ -14,10 +14,11 @@
 
 <body <?php body_class(); ?>>
 
-<header <?php echo is_page_template( 'landing.php') ? 'style="display:none;"' : ''; ?> id="main-header" class="w-100 lazy" <?php if (is_user_logged_in()) {
+<header <?php echo is_page_template('landing.php') ? 'style="display:none;"' : ''; ?> id="main-header"
+                                                                                      class="w-100 lazy" <?php if (is_user_logged_in()) {
     echo 'style="margin-top:30px"';
 } ?>>
-    <div class="flex-nowrap bg-white">
+    <div class="main__header flex-nowrap bg-white py-lg-3 lazy">
         <div class="iphone__inner d-lg-none d-block z-top position-relative">
             <div class="d-inline-flex justify-content-between align-items-center p-3 w-100 z-top position-absolute bg-white">
                 <?php get_template_part('template-parts/header-button'); ?>
@@ -33,7 +34,7 @@
                     <?php
                     wp_nav_menu(array(
                         'theme_location' => 'headerMenuLocation',
-                        'menu_class' => 'navbar-nav mt-5 w-100 flex-column pe-0 gap-5 w-100 justify-content-between',
+                        'menu_class' => 'navbar-nav mt-5 w-100 flex-column pe-0 gap-4 w-100 justify-content-between',
                         'container' => false,
                         'menu_id' => 'navbarTogglerMenu',
                         'item_class' => 'nav-item',
@@ -73,7 +74,7 @@
                     <?php
                     wp_nav_menu(array(
                         'theme_location' => 'headerMenuLocation',
-                        'menu_class' => 'navbar-nav flex-row pe-0 gap-5 w-100 justify-content-between desktop-menu',
+                        'menu_class' => 'navbar-nav flex-row pe-0 gap-lg-5 gap-4 w-100 justify-content-between desktop-menu',
                         'container' => false,
                         'menu_id' => 'navbarTogglerMenu',
                         'item_class' => 'nav-item',
@@ -95,15 +96,15 @@
 </header>
 <?php
 if (is_single() && get_post_type() == 'post') { ?>
-    <div class="position-fixed w-100" style="top: 68px;z-index: 2">
+    <div class="progress-container position-fixed w-100 pt-3 lazy" style="z-index: 10">
         <!-- Add this to your HTML file -->
-        <div class="progress">
-            <div class="progress-bar " role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0"
+        <div class="progress rounded-0">
+            <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0"
                  aria-valuemax="100"></div>
         </div>
     </div>
 <?php } ?>
 <main>
-
-
-
+    <?php if (!is_page_template('landing.php'))  { ?>
+    <div class="gap"></div>
+<?php } ?>

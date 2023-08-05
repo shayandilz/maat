@@ -9,7 +9,7 @@
 get_header(); ?>
 
     <section class="container">
-        <div class="row min-vh-100 align-items-end py-5">
+        <div class="row min-vh-100 align-items-center pb-5">
             <div class="col-lg-6">
                 <?php
                 $contact_image = get_field('contact_page_svg', 'option');
@@ -19,7 +19,7 @@ get_header(); ?>
                 <?php } ?>
             </div>
             <div class="col-lg-6">
-                <h1 class="text-center text-lg-end display-1 sofia text-primary text-uppercase fw-semibold my-2"
+                <h1 class="text-center text-lg-end display-1 sofia text-primary text-uppercase fw-semibold my-2 pb-lg-5"
                     data-aos="fade-right" data-aos-delay="300">
                     contact us
                 </h1>
@@ -94,26 +94,46 @@ get_header(); ?>
                 <div class="d-flex justify-content-lg-end justify-content-center my-2">
                     <ul class="d-inline-flex gap-3 align-items-end justify-content-end list-unstyled mb-0">
                         <?php
+                        $i = 0;
                         if (have_rows('social_list', 'option')):
-                            $i = 3;
                             while (have_rows('social_list', 'option')) : the_row();
                                 $i++;
                                 $icon = get_sub_field_object('icon');
                                 $url = get_sub_field('url');
                                 $value = $icon['value'];
                                 ?>
-                                <li class="d-flex icon-dark align-items-center justify-content-center"
-                                    data-aos="fade-up"
-                                    data-aos-delay="<?= $i; ?>00">
+                                <li class="d-flex align-items-center justify-content-center <?= $i == 1 ? 'border-end border-primary pe-2' : ''?>">
                                     <a href="<?= $url; ?>"
-                                       class="p-2 position-relative">
-                                        <i class="<?= $value; ?> d-flex align-items-center justify-content-center fs-5 text-primary"></i>
+                                       class="p-2 position-relative lazy">
+                                        <i class="<?= $value; ?> d-flex align-items-center justify-content-center fs-3 text-primary"></i>
 
                                     </a>
                                 </li>
                             <?php endwhile;
                         endif; ?>
                     </ul>
+<!--                    <ul class="d-inline-flex gap-3 align-items-end justify-content-end list-unstyled mb-0">-->
+<!--                        --><?php
+//                        if (have_rows('social_list', 'option')):
+//                            $i = 3;
+//                            while (have_rows('social_list', 'option')) : the_row();
+//                                $i++;
+//                                $icon = get_sub_field_object('icon');
+//                                $url = get_sub_field('url');
+//                                $value = $icon['value'];
+//                                ?>
+<!--                                <li class="d-flex icon-dark align-items-center justify-content-center"-->
+<!--                                    data-aos="fade-up"-->
+<!--                                    data-aos-delay="--><?php //= $i; ?><!--00">-->
+<!--                                    <a href="--><?php //= $url; ?><!--"-->
+<!--                                       class="p-2 position-relative">-->
+<!--                                        <i class="--><?php //= $value; ?><!-- d-flex align-items-center justify-content-center fs-5 text-primary"></i>-->
+<!---->
+<!--                                    </a>-->
+<!--                                </li>-->
+<!--                            --><?php //endwhile;
+//                        endif; ?>
+<!--                    </ul>-->
                 </div>
                 <div class="mt-5" data-aos="fade-up"
                      data-aos-delay="500">

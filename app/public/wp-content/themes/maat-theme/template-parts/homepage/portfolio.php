@@ -12,7 +12,7 @@
                 $portfolio_button = get_field('portfolio_button');
                 if( $portfolio_button ): ?>
                     <div class="button-white w-auto px-0">
-                        <a class="btn bg-transparent position-relative fs-6 p-0" data-aos="fade-left" data-aos-delay="500" href="<?php echo esc_url( $portfolio_button['link'] ); ?>">
+                        <a class="btn bg-transparent position-relative fs-6 p-0 fw-semibold" data-aos="fade-left" data-aos-delay="500" href="<?php echo esc_url( $portfolio_button['link'] ); ?>">
                             <?php echo esc_html( $portfolio_button['title'] ); ?>
                         </a>
                     </div>

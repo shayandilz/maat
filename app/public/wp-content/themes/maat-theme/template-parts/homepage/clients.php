@@ -7,7 +7,7 @@
             </h3>
             <div class="col-xl-8 col-12">
                 <div class="swiper client-swiper">
-                    <div class="swiper-wrapper py-5">
+                    <div class="swiper-wrapper py-lg-4 align-items-center">
                         <?php
                         $args = array(
                             'post_type' => 'clients',

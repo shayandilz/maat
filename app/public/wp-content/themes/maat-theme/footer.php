@@ -2,7 +2,7 @@
     <?php
     if (is_page_template('contact.php')) { ?>
         <div class="row py-5 align-items-center justify-content-center">
-            <div class="col-4">
+            <div class="col-10 col-lg-4">
                 <a href="<?php echo esc_url(get_home_url()) ?>">
                     <?php get_template_part('template-parts/svg/footer_contact') ?>
                 </a>
@@ -12,7 +12,7 @@
     <?php } else { ?>
         <div class="container">
             <div class="row justify-content-center justify-content-lg-start py-3 py-lg-5 g-3">
-                <div class="col-lg-2 d-flex justify-content-center justify-content-lg-start">
+                <div class="col-8 col-lg-2 d-flex justify-content-center justify-content-lg-start">
                     <a class="navbar-brand w-75" href="<?php echo esc_url(get_home_url()) ?>">
                         <?php
                         the_field('footer_logo', 'option');

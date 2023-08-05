@@ -9,8 +9,8 @@ $services = array(
 $loop_services = new WP_Query($services);
 ?>
 
-<section class="py-5 container min-vh-100 mt-2">
-    <div class="row align-items-center my-5">
+<section class="pb-5 container min-vh-100 mt-2">
+    <div class="row align-items-center mb-5">
         <div class="col-lg-6">
             <ul class="list-unstyled row gap-2 svg-list mb-0 align-items-center justify-content-center justify-content-lg-start mt-3 svg-service bg-transparent pb-3 pb-xl-0">
                 <?php
@@ -30,7 +30,7 @@ $loop_services = new WP_Query($services);
 
         </div>
         <div class="col-lg-6">
-            <h1 class="text-end text-primary display-1 text-uppercase sofia fw-bolder"
+            <h1 class="text-lg-end text-center text-primary display-1 text-uppercase sofia fw-bolder"
                 data-aos="fade-right"
                 data-aos-delay="100">
                 <?= get_field('services_title', 'option') ?>
@@ -76,14 +76,14 @@ if ($loop_services->have_posts()) {
             <div class="modal-dialog modal-dialog-centered modal-lg" style="pointer-events: auto!important;">
                 <div class="card w-100 h-100 border-0 bg-secondary pt-xl-4 p-4 rounded-0 d-flex justify-content-between flex-column gap-3 align-items-center glass-card">
                     <div class="d-flex align-items-center gap-3 justify-content-center mb-5 svg-service">
+                         <span class="border-end border-2 border-dark border-opacity-25 pe-5">
+                            <?php echo $modified_svg_code; ?>
+                        </span>
                         <h5 class="card-title fs-3 fw-semibold ">
                             <?php the_title(); ?>
                         </h5>
-                        <span class="border-start border-2 border-danger ps-4">
-                            <?php echo $modified_svg_code; ?>
-                        </span>
                     </div>
-                    <div class="d-flex flex-column justify-content-center align-items-center text-center w-100 h-100 pb-2">
+                    <div class="d-flex flex-column justify-content-center align-items-center w-100 h-100 pb-2">
                         <?php $content = get_the_content();
 
                         $lines = explode("\n", $content);
@@ -106,7 +106,7 @@ if ($loop_services->have_posts()) {
                             </div>
                         <?php } ?>
                         <div class="button-primary w-auto px-0 z-top">
-                            <a class="btn bg-transparent position-relative overflow-hidden fs-4"
+                            <a class="btn bg-transparent position-relative"
                                href="#" data-bs-dismiss="modal">
                                 <p class="fs-6 fw-bold w-100 text-start h-100 position-absolute top-0 start-0 d-flex justify-content-center align-items-center m-0 p-0 z-top">
                                     بستن

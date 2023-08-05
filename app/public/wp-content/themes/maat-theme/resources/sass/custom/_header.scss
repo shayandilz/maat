@@ -36,10 +36,10 @@ header{
   .backTo_Top {
     @extend .intro
   }
-  .iphone__inner > div{
+  &:not(.single) .iphone__inner > div{
     box-shadow: 0px -11px 0px 14px #00B3AC;
   }
-  header{
+  &:not(.single) header{
     box-shadow: 0px -11px 0px 14px #00B3AC;
   }
   nav{

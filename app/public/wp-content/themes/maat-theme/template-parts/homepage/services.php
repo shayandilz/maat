@@ -1,4 +1,4 @@
-<section class="container min-vh-50 d-flex align-items-center mt-lg-0 mt-5">
+<section class="container min-vh-50 d-flex align-items-center mt-lg-4 mt-5">
     <div class="row justify-content-center justify-content-lg-between g-4 g-lg-2">
         <div class="col-lg-6 row px-0 px-lg-2">
             <div class="col-lg-6">
@@ -6,13 +6,13 @@
                     <?= get_field('services_section_title') ?>
                 </h3>
             </div>
-            <div class="col-lg-6 text-justify fw-semibold" data-aos="fade-up" data-aos-delay="200" data-aos-duration="400">
+            <div class="col-lg-6 text-justify fw-normal" data-aos="fade-up" data-aos-delay="200" data-aos-duration="400">
                 <?= get_field('services_section_text') ?>
                 <?php
                 $services_button = get_field('services_button');
                 if( $services_button ): ?>
                     <div class="button-primary w-auto px-0">
-                        <a class="btn bg-transparent position-relative fs-6 p-0" data-aos="fade-left" data-aos-delay="500" href="<?php echo esc_url( $services_button['link'] ); ?>">
+                        <a class="btn bg-transparent position-relative fs-6 p-0 fw-semibold" data-aos="fade-left" data-aos-delay="500" href="<?php echo esc_url( $services_button['link'] ); ?>">
                             <?php echo esc_html( $services_button['title'] ); ?>
                         </a>
                     </div>

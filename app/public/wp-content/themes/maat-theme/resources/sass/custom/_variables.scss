@@ -55,7 +55,8 @@ $display-font-sizes:(
         3: 4rem,
         4: 3.5rem,
         5: 3rem,
-        6: 2.5rem
+        6: 2.5rem,
+        7: 2rem
 );
 
 //container
@@ -64,6 +65,8 @@ $container-max-widths: (
         md: 720px,
         lg: 960px,
         xl: 1140px,
-        xxl: 1530px
+        xxl: 1530px,
+        //xxl: 85vw,
+        //xxxl: 80vw
 );
 

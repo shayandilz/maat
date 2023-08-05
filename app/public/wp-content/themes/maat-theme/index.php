@@ -3,13 +3,23 @@
 
 get_header(); ?>
 
-    <section class="pt-5 min-vh-100 mt-5">
+    <section class="min-vh-100">
         <div class="container">
-            <h1 class="text-end text-primary display-1 text-uppercase sofia fw-bolder lh-sm mt-5 mb-0">
+            <h1 class="text-end text-primary display-1 text-uppercase sofia fw-bolder lh-sm mb-0 pt-4 pt-lg-2">
                 Blog <br>
                 AND News
             </h1>
-            <?php if (have_posts()) : $i = 1; ?>
+            <?php if (have_posts()) :
+            $i = 1;
+            $paged = get_query_var('paged') ? get_query_var('paged') : 1; // Get the current page number
+
+            // Get the "Posts per page" setting from WordPress settings
+            $posts_per_page = get_option('posts_per_page', 10); // 10 is the default fallback value if the setting is not defined
+            $initial_post_index = ($paged - 1) * $posts_per_page;
+
+            // Initialize the counter variable
+            $j = $initial_post_index + 1;
+            ?>
             <div class="row g-4 mt-2 mt-lg-5 ">
                 <?php
                 /* Start the Loop */
@@ -17,9 +27,11 @@ get_header(); ?>
                     $i++;
                     the_post(); ?>
                     <div class="col-lg-3 col-md-6 col-12" data-aos="zoom-in" data-aos-delay="<?= $i; ?>00">
-                        <?php get_template_part('template-parts/home-card'); ?>
+                        <?php get_template_part('template-parts/home-card', null, array('j' => $j)); ?>
                     </div>
-                <?php endwhile;
+                    <?php
+                    $j++;
+                endwhile;
                 ?>
             </div>
         </div>

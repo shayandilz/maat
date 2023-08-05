@@ -9,7 +9,7 @@
 get_header(); ?>
 
     <section class="container">
-        <div class="row min-vh-50 align-items-end py-5">
+        <div class="row align-items-end pb-5">
             <div class="col-lg-6">
 
             </div>

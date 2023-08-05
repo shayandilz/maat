@@ -12,9 +12,13 @@ $(document).ready(function () {
         if ($(document).scrollTop() > 30) { // check if user scrolled more than 50 from top of the browser window
             $('.backTo_Top').removeClass('outro');
             $('.backTo_Top').addClass('intro');
+            $('.main__header').removeClass('py-lg-3');
+            $('.progress-container').removeClass('pt-3');
         } else if ($(document).scrollTop() == 0) {
             $('.backTo_Top').addClass('outro');
             $('.backTo_Top').removeClass('intro');
+            $('.main__header').addClass('py-lg-3');
+            $('.progress-container').addClass('pt-3');
         }
     })
 
@@ -200,7 +204,24 @@ document.addEventListener('DOMContentLoaded', function () {
             }, 400)
         }, 4500)
     }
+    // Function to stop the video when the modal is closed
+    function stopVideoOnModalClose(modal) {
+        const videos = modal.querySelectorAll("video");
+        videos.forEach(video => {
+            video.pause();
+            video.currentTime = 0;
+        });
+    }
 
+    // Find all modals dynamically
+    const modals = document.querySelectorAll(".portfolio-modal");
+
+    // Attach event to each modal when it's hidden (closed)
+    modals.forEach(modal => {
+        modal.addEventListener("hidden.bs.modal", function () {
+            stopVideoOnModalClose(modal);
+        });
+    });
 
 });
 

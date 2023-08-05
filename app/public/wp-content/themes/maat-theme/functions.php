@@ -175,9 +175,9 @@ function myprefix_adjust_offset_pagination($found_posts, $query)
 function the_breadcrumb()
 {
     global $post;
-    echo '<ul class="breadcrumb my-0 py-4">';
+    echo '<ul class="breadcrumb my-0 py-2 d-flex list-unstyled gap-2">';
     if (!is_home()) {
-        echo '<li class="breadcrumb-item"><a class="text-decoration-none text-semi-light" href="';
+        echo '<li class="breadcrumb-item"><a class="text-decoration-none text-dark" href="';
         echo get_post_type_archive_link('post');
         echo '">';
         echo 'مقاله';
@@ -195,7 +195,7 @@ function the_breadcrumb()
                 $anc = get_post_ancestors($post->ID);
                 $title = get_the_title();
                 foreach ($anc as $ancestor) {
-                    $output = '<li><a class="breadcrumb-item" href="' . get_permalink($ancestor) . '" title="' . get_the_title($ancestor) . '">' . get_the_title($ancestor) . '</a></li> <li class="separator">/</li>';
+                    $output = '<li><a class="breadcrumb-item text-dark" href="' . get_permalink($ancestor) . '" title="' . get_the_title($ancestor) . '">' . get_the_title($ancestor) . '</a></li> <li class="separator">/</li>';
                 }
                 echo $output;
                 echo '<strong title="' . $title . '"> ' . $title . '</strong>';
@@ -418,4 +418,8 @@ function reading_time()
 
     return $readingtime;
 }
-
+// Increase maximum upload file size
+ini_set("upload_max_filesize","100Mb");
+ini_set("post_max_size","100Mb");
+ini_set("max_execution_time","500");
+ini_set("max_input_time","500");
