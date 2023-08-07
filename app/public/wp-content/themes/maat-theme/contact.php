@@ -78,9 +78,9 @@ get_header(); ?>
                             while (have_rows('email_list', 'option')) : the_row();
                                 $i++;
                                 $phone = get_sub_field('title_or_text');
-                                $phone_url = get_sub_field('url');
+                                $phone_url = get_sub_field('url__optional_');
                                 ?>
-                                <a href="<?= $phone_url; ?>"
+                                <a href="mailto:<?= $phone_url; ?>"
                                    class="text-dark sofia text-lowercase"
                                    data-aos="fade-up"
                                    data-aos-delay="<?= $i; ?>00">
@@ -100,10 +100,11 @@ get_header(); ?>
                                 $i++;
                                 $icon = get_sub_field_object('icon');
                                 $url = get_sub_field('url');
+                                $name = get_sub_field_object('name');
                                 $value = $icon['value'];
                                 ?>
                                 <li class="d-flex align-items-center justify-content-center <?= $i == 1 ? 'border-end border-primary pe-2' : ''?>">
-                                    <a href="<?= $url; ?>"
+                                    <a href="<?= $url; ?>" aria-label="<?= $name['value']; ?>"
                                        class="p-2 position-relative lazy">
                                         <i class="<?= $value; ?> d-flex align-items-center justify-content-center fs-3 text-primary"></i>
 

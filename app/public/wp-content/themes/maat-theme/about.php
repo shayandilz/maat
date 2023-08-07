@@ -151,8 +151,8 @@ get_header(); ?>
                     $image = get_sub_field('image'); ?>
                     <div class="swiper-slide" data-aos="zoom-in" data-aos-delay="<?= $i; ?>00">
                         <div class="card border-0 rounded-0">
-                            <div class="p-5">
-                                <img src="<?= $image['url']; ?>" class="card-img-top" alt="<?= $image['alt']; ?>">
+                            <div class="text-center">
+                                <img src="<?= $image['url']; ?>" class="achivement-img" alt="<?= $image['alt']; ?>">
                             </div>
                         </div>
                     </div>

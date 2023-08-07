@@ -2,9 +2,9 @@
     <div class="row justify-content-center justify-content-lg-between g-4 g-lg-2">
         <div class="col-lg-6 row px-0 px-lg-2">
             <div class="col-lg-6">
-                <h3 class="text-start text-primary display-5 fw-bolder text-uppercase sofia" data-aos="fade-up" data-aos-delay="100" data-aos-duration="500">
+                <h2 class="text-start text-primary display-5 fw-bolder text-uppercase sofia" data-aos="fade-up" data-aos-delay="100" data-aos-duration="500">
                     <?= get_field('services_section_title') ?>
-                </h3>
+                </h2>
             </div>
             <div class="col-lg-6 text-justify fw-normal" data-aos="fade-up" data-aos-delay="200" data-aos-duration="400">
                 <?= get_field('services_section_text') ?>
@@ -37,9 +37,9 @@
                                     echo $modified_svg_code;
                                     ?>
                                 </div>
-                                <h5 class="mb-0">
+                                <p class="service-title mb-0 fs-5">
                                     <?= $service->post_title; ?>
-                                </h5>
+                                </p>
                             </div>
                         </li>
                     <?php endforeach; ?>

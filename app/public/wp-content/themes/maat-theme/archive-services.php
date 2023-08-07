@@ -79,11 +79,11 @@ if ($loop_services->have_posts()) {
                          <span class="border-end border-2 border-dark border-opacity-25 pe-5">
                             <?php echo $modified_svg_code; ?>
                         </span>
-                        <h5 class="card-title fs-3 fw-semibold ">
+                        <h5 class="card-title fs-3 fw-semibold">
                             <?php the_title(); ?>
                         </h5>
                     </div>
-                    <div class="d-flex flex-column justify-content-center align-items-center w-100 h-100 pb-2">
+                    <div class="d-flex flex-column justify-content-center align-items-center w-100 h-100 pb-2 services-card">
                         <?php $content = get_the_content();
 
                         $lines = explode("\n", $content);

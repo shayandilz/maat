@@ -10,7 +10,7 @@ const swiper = new Swiper('.home-swiper', {
         nextEl: '.swiper-prev',
         prevEl: '.swiper-next',
     },
-    speed: 500,
+    speed: 1500,
     pagination: {
         el: '.swiper-paginate',
         type: 'fraction',
@@ -27,7 +27,7 @@ const swiper = new Swiper('.home-swiper', {
         }
     },
     autoplay: {
-        delay: 6000,
+        delay: 3000,
     },
     disableOnInteraction: false,
 })
@@ -53,10 +53,19 @@ const client = new Swiper('.client-swiper', {
         nextEl: '.swiper-prev-client',
         prevEl: '.swiper-next-client',
     },
-    // autoplay: {
-    //     delay: 2000,
-    // },
+    autoplay: {
+        delay: 2000,
+    },
     disableOnInteraction: false,
+    // Enable lazy loading for slides out of view
+    // preloadImages: 3,
+    // updateOnImagesReady: true,
+    // lazy: {
+    //     loadOnTransitionStart: true,
+    //     lazyLoadingInPrevNext: true,
+    //     lazyLoadingInPrevNextAmount: 5, // Number of images to preload ahead of the current slide
+    //     lazyLoadingOnTransitionStart: true,
+    // },
 })
 const portfolio = new Swiper('.portfolio-swiper', {
     // Optional parameters
@@ -98,7 +107,6 @@ const achievements = new Swiper('.achievements-swiper', {
     loopFillGroupBlank: false,
     grabCursor: true,
     slidesPerView: 1,
-    spaceBetween: 5,
     breakpoints: {
         768: {
             slidesPerView: 3,
@@ -111,6 +119,9 @@ const achievements = new Swiper('.achievements-swiper', {
     navigation: {
         nextEl: '.swiper-prev-achiv',
         prevEl: '.swiper-next-achiv',
+    },
+    autoplay: {
+        delay: 2000,
     },
     disableOnInteraction: false,
 })

@@ -1,4 +1,8 @@
 @include media-breakpoint-up(lg) {
+  .achivement-img {
+    max-height: 400px;
+    width: auto;
+  }
   .swiper-pagination-total {
     font-size: 45px !important;
   }
@@ -53,6 +57,10 @@
   }
 }
 @include media-breakpoint-down(lg) {
+  .achivement-img {
+    max-height: 250px;
+    width: auto;
+  }
   .portfolio-dialog {
     transform: translateY(-50%) !important;
     top:50%;

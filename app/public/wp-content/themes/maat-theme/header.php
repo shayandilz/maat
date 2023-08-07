@@ -6,7 +6,7 @@
     <meta name="description" content="<?= get_bloginfo('description'); ?>">
     <meta name="author" content="<?= get_bloginfo('author'); ?>">
     <meta charset="<?php bloginfo('charset'); ?>">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <?php wp_head(); ?>
@@ -22,7 +22,7 @@
         <div class="iphone__inner d-lg-none d-block z-top position-relative">
             <div class="d-inline-flex justify-content-between align-items-center p-3 w-100 z-top position-absolute bg-white">
                 <?php get_template_part('template-parts/header-button'); ?>
-                <a class="navbar-brand me-0" href="<?php echo esc_url(get_home_url()) ?>">
+                <a class="navbar-brand me-0" href="<?php echo esc_url(get_home_url()) ?>" aria-label="logo">
                     <?php
                     the_field('header_logo', 'option');
                     ?>
@@ -84,7 +84,7 @@
                     ?>
                 </div>
                 <div class="d-flex col-lg-6 justify-content-end align-items-center">
-                    <a class="navbar-brand me-0" href="<?php echo esc_url(get_home_url()) ?>">
+                    <a class="navbar-brand me-0" href="<?php echo esc_url(get_home_url()) ?>" aria-label="logo">
                         <?php
                         the_field('header_logo', 'option');
                         ?>

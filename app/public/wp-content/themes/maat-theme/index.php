@@ -26,7 +26,7 @@ get_header(); ?>
                 while (have_posts()) :
                     $i++;
                     the_post(); ?>
-                    <div class="col-lg-3 col-md-6 col-12" data-aos="zoom-in" data-aos-delay="<?= $i; ?>00">
+                    <div class="col-lg-4 col-xl-3 col-md-6 col-12" data-aos="zoom-in" data-aos-delay="<?= $i; ?>00">
                         <?php get_template_part('template-parts/home-card', null, array('j' => $j)); ?>
                     </div>
                     <?php
@@ -45,7 +45,7 @@ get_header(); ?>
             if ($links) : ?>
 
                 <nav aria-label="age navigation example text-dark">
-                    <?php echo '<ul class="pagination gap-3 justify-content-center align-items-center flex-row-reverse mb-0">';
+                    <?php echo '<ul class="pagination gap-3 justify-content-center align-items-center flex-row-reverse mb-0 fs-5">';
                     // get_previous_posts_link will return a string or void if no link is set.
                     if ($prev_posts_link = get_previous_posts_link(__('>'))) :
                         echo '<li class="prev-list-item page-item">';

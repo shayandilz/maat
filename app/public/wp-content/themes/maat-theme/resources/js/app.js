@@ -10,13 +10,9 @@ $(document).ready(function () {
 
     $(window).scroll(function () { // check if scroll event happened
         if ($(document).scrollTop() > 30) { // check if user scrolled more than 50 from top of the browser window
-            $('.backTo_Top').removeClass('outro');
-            $('.backTo_Top').addClass('intro');
             $('.main__header').removeClass('py-lg-3');
             $('.progress-container').removeClass('pt-3');
         } else if ($(document).scrollTop() == 0) {
-            $('.backTo_Top').addClass('outro');
-            $('.backTo_Top').removeClass('intro');
             $('.main__header').addClass('py-lg-3');
             $('.progress-container').addClass('pt-3');
         }

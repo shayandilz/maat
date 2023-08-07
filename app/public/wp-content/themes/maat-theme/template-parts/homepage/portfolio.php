@@ -29,7 +29,7 @@
                         $i++;
                         setup_postdata($portfolio); ?>
                         <li class="col-lg-6" data-aos="zoom-in" data-aos-delay="<?= $i; ?>00" data-aos-duration="<?= $i; ?>00">
-                            <img class="img-fluid"
+                            <img class="img-fluid" width="800" height="400"
                                  src="<?php echo get_the_post_thumbnail_url($portfolio->ID) ?>"
                                  alt="<?= $portfolio->post_title; ?>">
                         </li>

@@ -22,7 +22,7 @@
                                 $i++;
                                 ?>
                                 <div class="swiper-slide">
-                                    <img
+                                    <img    width="100" height="100"
                                             class="img-fluid"
                                             src="<?php echo get_the_post_thumbnail_url() ?>"
                                             alt="<?php the_title(); ?>"/>
