@@ -312,6 +312,10 @@ body.admin-bar {
 }
 
 // portfolio
+.portfolio-dialog {
+  transform: translateY(-50%) !important;
+  top:50%;
+}
 .portfolio-card {
   .play_button {
     transition: all 0.4s ease-out;

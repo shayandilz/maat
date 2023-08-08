@@ -176,7 +176,7 @@ if ($loop_portfolio->have_posts()) {
         <div class="modal portfolio-modal fade" id="modal-<?= get_the_ID(); ?>" tabindex="-1"
              aria-labelledby="exampleModalLabel"
              aria-hidden="true">
-            <div class="modal-dialog portfolio-dialog modal-xl pt-lg-3 glass-card"
+            <div class="modal-dialog portfolio-dialog modal-xl glass-card"
                  style="pointer-events: auto!important;">
                 <div class="modal-content bg-transparent border-3 border-white border">
                     <div class="modal-body p-lg-3 p-1">

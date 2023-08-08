@@ -4,10 +4,10 @@
     width: auto;
   }
   .swiper-pagination-total {
-    font-size: 45px !important;
+    font-size: 40px !important;
   }
   .swiper-pagination-current {
-    font-size: 40px !important;
+    font-size: 45px !important;
   }
   .progress-container {
     top:70px;
@@ -36,9 +36,18 @@
       }
     }
   }
-  .gap {
-    height: 110px;
+  body {
+    .gap {
+      height: 110px;
+    }
+
+    &.logged-in {
+      .gap {
+        height: 130px;
+      }
+    }
   }
+
   .supah-scroll {
     position: fixed;
     z-index: 1;
@@ -61,15 +70,11 @@
     max-height: 250px;
     width: auto;
   }
-  .portfolio-dialog {
-    transform: translateY(-50%) !important;
-    top:50%;
-  }
   .swiper-pagination-current {
-    font-size: 30px !important;
+    font-size: 35px !important;
   }
   .swiper-pagination-total {
-    font-size: 35px !important;
+    font-size: 30px !important;
   }
   .progress-container {
     top:80px;

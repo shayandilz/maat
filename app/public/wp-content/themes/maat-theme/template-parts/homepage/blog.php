@@ -7,7 +7,7 @@
                 <?= get_field('blog_section_title') ?>
             </h3>
         </div>
-        <div class="col-xl-9 row justify-content-center gy-4 gx-3 gy-lg-1">
+        <div class="col-xl-9 row justify-content-center g-2 g-lg-4">
             <?php
             $args = array(
                 'post_type' => 'post',

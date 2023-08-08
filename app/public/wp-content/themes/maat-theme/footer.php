@@ -61,7 +61,7 @@
                                 }
                                 ?>
                                 <a href="tel:<?= $phone_url; ?>"
-                                   class="text-white <?= $class; ?> border-danger border-1 border-opacity-50 px-2 pt-1 text-shadow">
+                                   class="text-white <?= $class; ?> border-white border-1 border-opacity-50 px-2 pt-1 text-shadow">
                                     <?= $phone; ?>
                                 </a>
 

@@ -33,7 +33,7 @@
                         ?>
                     </div>
                 </div>
-                <div class="col-lg-12 d-flex justify-content-center gap-3 text-primary mt-5 fs-3">
+                <div class="col-lg-12 d-flex justify-content-center gap-3 text-primary mt-5 mt-lg-3 fs-3">
                     <div class="swiper-next-client" data-aos="fade-left" data-aos-delay="300" data-aos-offset="0">
                         <?php get_template_part('template-parts/svg/right-arrow'); ?>
                     </div>

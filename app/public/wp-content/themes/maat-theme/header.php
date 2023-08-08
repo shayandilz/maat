@@ -1,7 +1,6 @@
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
-    <meta charset="UTF-8">
     <meta name="keywords" content="<?= get_bloginfo('name'); ?>">
     <meta name="description" content="<?= get_bloginfo('description'); ?>">
     <meta name="author" content="<?= get_bloginfo('author'); ?>">
@@ -53,9 +52,10 @@
                                 $icon = get_sub_field_object('icon');
                                 $url = get_sub_field('url');
                                 $value = $icon['value'];
+                                $name = get_sub_field_object('name');
                                 ?>
                                 <li class="d-flex align-items-center justify-content-center">
-                                    <a href="<?= $url; ?>"
+                                    <a href="<?= $url; ?>" aria-label="<?= $name['value']; ?>"
                                        class="p-1 social-icon position-relative d-block">
                                         <i class="<?= $value; ?> d-flex align-items-center justify-content-center fs-1"></i>
 
