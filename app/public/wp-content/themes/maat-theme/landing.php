@@ -54,7 +54,7 @@ get_header(); ?>
                                 $svg = get_sub_field('svg');
                                 if ($svg == 'Maat') { ?>
                                     <li class="col-lg-3 d-flex justify-content-center align-items-center mb-3 border-opacity-50 border-white border-start py-3" title="<?= $svg; ?>">
-                                        <a href="<?php esc_url(the_sub_field('url')); ?>">
+                                        <a href="<?php esc_url(the_sub_field('url')); ?>" target="_blank">
                                             <?php
                                             $svgWidth = '130';
                                             $svgHeight = '60';
@@ -69,7 +69,7 @@ get_header(); ?>
                                 <?php }
                                 if ($svg == 'Armani') { ?>
                                     <li class="col-lg-3 d-flex justify-content-center align-items-center mb-3 border-opacity-50 border-white border-start py-3" title="<?= $svg; ?>">
-                                        <a href="<?php esc_url(the_sub_field('url')); ?>">
+                                        <a href="<?php esc_url(the_sub_field('url')); ?>" target="_blank">
                                             <?php
                                             $svgWidth = '150';
                                             $svgHeight = '60';
@@ -84,7 +84,7 @@ get_header(); ?>
                                 <?php }
                                 if ($svg == 'Macan') { ?>
                                     <li class="col-lg-3 d-flex justify-content-center align-items-center mb-3 border-opacity-50 border-white border-start py-3" title="<?= $svg; ?>">
-                                        <a href="<?php esc_url(the_sub_field('url')); ?>">
+                                        <a href="<?php esc_url(the_sub_field('url')); ?>" target="_blank">
                                             <?php
                                             $svgWidth = '130';
                                             $svgHeight = '60';
@@ -99,7 +99,7 @@ get_header(); ?>
                                 <?php }
                                 if ($svg == 'Raifilm') { ?>
                                     <li class="col-lg-3 d-flex justify-content-center align-items-center mb-3 py-3" title="<?= $svg; ?>">
-                                        <a href="<?php esc_url(the_sub_field('url')); ?>">
+                                        <a href="<?php esc_url(the_sub_field('url')); ?>" target="_blank">
                                             <?php
                                             $svgWidth = '150';
                                             $svgHeight = '60';
@@ -114,7 +114,7 @@ get_header(); ?>
                                 <?php }
                                 if ($svg == 'Hoodad') { ?>
                                     <li class="col-lg d-flex justify-content-center align-items-center mb-3 border-opacity-50 border-white border-start py-3" title="<?= $svg; ?>">
-                                        <a href="<?php esc_url(the_sub_field('url')); ?>">
+                                        <a href="<?php esc_url(the_sub_field('url')); ?>" target="_blank">
                                             <?php
                                             $svgWidth = '130';
                                             $svgHeight = '60';
@@ -129,7 +129,7 @@ get_header(); ?>
                                 <?php }
                                 if ($svg == 'Houger') { ?>
                                     <li class="col-lg d-flex justify-content-center align-items-center mb-3 border-opacity-50 border-white border-start py-3" title="<?= $svg; ?>">
-                                        <a href="<?php esc_url(the_sub_field('url')); ?>">
+                                        <a href="<?php esc_url(the_sub_field('url')); ?>" target="_blank">
                                             <?php
                                             $svgWidth = '130';
                                             $svgHeight = '60';
@@ -144,7 +144,7 @@ get_header(); ?>
                                 <?php }
                                 if ($svg == 'Nilmoti') { ?>
                                     <li class="col-lg d-flex justify-content-center align-items-center mb-3 border-opacity-50 border-white border-start py-3" title="<?= $svg; ?>">
-                                        <a href="<?php esc_url(the_sub_field('url')); ?>">
+                                        <a href="<?php esc_url(the_sub_field('url')); ?>" target="_blank">
                                             <?php
                                             $svgWidth = '130';
                                             $svgHeight = '60';
@@ -159,7 +159,7 @@ get_header(); ?>
                                 <?php }
                                 if ($svg == 'Ager') { ?>
                                     <li class="col-lg d-flex justify-content-center align-items-center mb-3 border-opacity-50 border-white border-start py-3" title="<?= $svg; ?>">
-                                        <a href="<?php esc_url(the_sub_field('url')); ?>">
+                                        <a href="<?php esc_url(the_sub_field('url')); ?>" target="_blank">
                                             <?php
                                             $svgWidth = '130';
                                             $svgHeight = '60';
@@ -174,7 +174,7 @@ get_header(); ?>
                                 <?php }
                                 if ($svg == 'Taal') { ?>
                                     <li class="col-lg d-flex justify-content-center align-items-center mb-3 py-3" title="<?= $svg; ?>">
-                                        <a href="<?php esc_url(the_sub_field('url')); ?>">
+                                        <a href="<?php esc_url(the_sub_field('url')); ?>" target="_blank">
                                             <?php
                                             $svgWidth = '130';
                                             $svgHeight = '60';

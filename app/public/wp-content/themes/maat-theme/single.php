@@ -41,9 +41,11 @@ while (have_posts()) :
                 </div>
             </div>
             <div class="col-lg-6 col-12">
-                <img src="<?php echo get_the_post_thumbnail_url() ?>"
-                     class="img-fluid"
-                     alt="<?php the_title(); ?>">
+                <?php if (get_the_post_thumbnail_url()) { ?>
+                    <img src="<?php echo get_the_post_thumbnail_url() ?>"
+                         class="img-fluid"
+                         alt="<?php the_title(); ?>">
+                <? } ?>
             </div>
         </section>
         <section class="row py-5 blog-sticky">
@@ -78,8 +80,8 @@ while (have_posts()) :
                                 <div class="col-lg-4 col-12">
                                     <?php get_template_part('template-parts/home-card', null, array('j' => $j)); ?>
                                 </div>
-                            <?php
-                            $j++;
+                                <?php
+                                $j++;
                             endwhile;
                         endif;
                         wp_reset_postdata(); ?>

@@ -92,9 +92,9 @@ if ($loop_services->have_posts()) {
                         if (count($lines) > 8) { // Display in two columns if more than 7 lines
                             ?>
                             <div class="row align-items-center w-100 flex-row-reverse">
-                                <div class="col-md-6 lh-lg">
+                                <ul class="col-md-6 lh-lg">
                                     <?php echo wpautop(implode("\n", array_slice($lines, $dividedLines))); ?>
-                                </div>
+                                </ul>
                                 <div class="col-md-6 lh-lg">
                                     <?php echo wpautop(implode("\n", array_slice($lines, 0, $dividedLines))); ?>
                                 </div>
