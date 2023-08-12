@@ -1,4 +1,4 @@
-<section class="bg-secondary">
+<section class="bg-secondary" id="clients">
     <div class="container">
         <div class="row pt-5 align-items-start min-vh-50 justify-content-center">
             <h3 class="text-center text-primary display-5 fw-bolder sofia text-uppercase" data-aos="fade-up" data-aos-delay="100"

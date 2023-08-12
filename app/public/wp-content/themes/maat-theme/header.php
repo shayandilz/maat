@@ -13,8 +13,7 @@
 
 <body <?php body_class(); ?>>
 
-<header <?php echo is_page_template('landing.php') ? 'style="display:none;"' : ''; ?> id="main-header"
-                                                                                      class="w-100 lazy" <?php if (is_user_logged_in()) {
+<header <?php echo is_page_template('landing.php') ? 'style="display:none;"' : ''; ?> id="main-header" class="w-100 lazy" <?php if (is_user_logged_in()) {
     echo 'style="margin-top:30px"';
 } ?>>
     <div class="main__header flex-nowrap bg-white py-lg-3 lazy">

@@ -10,7 +10,7 @@ $loop_portfolio = new WP_Query($portfolio);
 ?>
 
 <section class="pb-5 container min-vh-100">
-    <ul class="nav nav-tabs border-bottom-0 justify-content-lg-between gap-2 gap-lg-4 flex-nowrap overflow-tab overflow-x-scroll overflow-y-hidden mb-lg-4 portfolio-nav-item"
+    <ul class="nav nav-tabs border-bottom-0 flex-row-reverse justify-content-lg-between gap-2 gap-lg-4 flex-nowrap overflow-tab overflow-x-scroll overflow-y-hidden mb-lg-4 portfolio-nav-item"
         id="myTab"
         role="tablist">
 
@@ -18,43 +18,43 @@ $loop_portfolio = new WP_Query($portfolio);
         $args_cat = array(
             'taxonomy' => 'portfolio_categories',
 //            'hide_empty'=> false,
-            'orderby' => 'name',
+              'orderby' => 'name',
+//            'orderby' => 'meta_value_num',
+//            'meta_key' => 'category_order',
             'order' => 'ASC'
         );
-        $cats = get_categories($args_cat);
-        foreach ($cats as $key => $cat) {
-            $term_ids[] = $cat->term_taxonomy_id;
-        }
+        $cats = get_terms($args_cat);
+        $active_tab = get_field('active' , 197, 'portfolio_categories');
         // Add a new category object at the beginning for "Show All" option
         //        array_unshift($cats, (object)array('name' => 'ALL', 'term_taxonomy_id' => $term_ids));
-        $s = 0;
-        $i = 0;
-        foreach ($cats as $key => $cat) { ?>
+        foreach ($cats as $key => $cat) {
+
+            ?>
             <li class="nav-item w-100" role="presentation">
-                <button class="text-uppercase sofia px-lg-4 h-100 py-lg-4 filterPortfolio fs-6 rounded-0 lazy text-center border-0 position-relative d-inline-block w-100 nav-link <?php if ($i == 0) {
-                    $i = 1;
+                <button class="text-uppercase sofia px-lg-4 h-100 py-lg-4 filterPortfolio fs-6 rounded-0 lazy text-center border-0 position-relative d-inline-block w-100 nav-link
+                <?php if ($cat->term_id === $active_tab->term_id) {
                     echo 'active';
                 } ?>"
-                        id="cat-<?php echo $key ?>-tab"
+                        id="cat-<?php echo $cat->term_id ?>-tab"
                         data-bs-toggle="tab"
-                        data-bs-target="#cat-<?php echo $key ?>"
+                        data-bs-target="#cat-<?php echo $cat->term_id ?>"
                         type="button" role="tab"
-                        aria-controls="cat-<?php echo $key ?>"
+                        aria-controls="cat-<?php echo $cat->term_id ?>"
                         aria-selected="true">
                     <?php echo $cat->name; ?>
                 </button>
             </li>
-            <?php $s++;
+            <?php
         }
         wp_reset_postdata() ?>
     </ul>
 
     <div class="tab-content" id="myTabContent" role="tablist">
         <?php foreach ($cats as $key => $cat) { ?>
-            <div class="tab-pane fade <?php if ($key == 1) {
+            <div class="tab-pane fade <?php if ($cat->term_id == $active_tab->term_id) {
                 echo 'show active';
-            } ?>" id="cat-<?php echo $key; ?>" role="tabpanel"
-                 aria-labelledby="cat-<?php echo $key; ?>-tab">
+            } ?>" id="cat-<?php echo $cat->term_id; ?>" role="tabpanel"
+                 aria-labelledby="cat-<?php echo $cat->term_id; ?>-tab">
                 <div class="row gap-4 justify-content-center"
                      id="my-custom-post-type-container">
                     <?php
@@ -89,9 +89,9 @@ $loop_portfolio = new WP_Query($portfolio);
                             }
                             $current_post = get_post();
                             ?>
-                            <div class="<?php echo $col_class; ?> row align-items-center aos" data-aos="zoom-in"
+                            <div class="<?php echo $col_class; ?> row align-items-center aos " data-aos="zoom-in"
                                  data-aos-delay="<?= $i; ?>00">
-                                <div class="ratio ratio-21x9 px-0 px-lg-2 order-2 order-lg-1 portfolio-card overflow-hidden shadow-sm position-relative">
+                                <div class="ratio ratio-21x9 px-0 px-lg-2 order-2 order-lg-1 portfolio-card overflow-hidden <?php echo $i > 1 ? 'shadow-sm' : '' ;?> position-relative">
                                     <img src="<?php echo get_the_post_thumbnail_url() ?>"
                                          class="object-fit"
                                          <?php  if (!has_term('video', 'portfolio_categories', $current_post)) {?>
@@ -139,14 +139,6 @@ $loop_portfolio = new WP_Query($portfolio);
                                         <?php } else {
                                             echo '';
                                         }; ?>
-                                        <!--                                            <div class="w-100">-->
-                                        <!--                                                <h4 class="fs-6  pb-2">-->
-                                        <!--                                                    مشتری/ --><?php //the_title(); ?>
-                                        <!--                                                </h4>-->
-                                        <!--                                                <h6 class="fs-6  pb-2">-->
-                                        <!--                                                    سال تولید اثر/ --><?php //the_field('year'); ?>
-                                        <!--                                                </h6>-->
-                                        <!--                                            </div>-->
                                     </div>
                                 <?php } ?>
                                 <?php if ($i == 1) { ?>
