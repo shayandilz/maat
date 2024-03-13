@@ -1,27 +1,33 @@
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
-    <meta charset="UTF-8">
     <meta name="keywords" content="<?= get_bloginfo('name'); ?>">
     <meta name="description" content="<?= get_bloginfo('description'); ?>">
     <meta name="author" content="<?= get_bloginfo('author'); ?>">
     <meta charset="<?php bloginfo('charset'); ?>">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
     <?php wp_head(); ?>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KYV67SD976"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-KYV67SD976');
+    </script>
 </head>
 
 <body <?php body_class(); ?>>
 
-<header <?php echo is_page_template( 'landing.php') ? 'style="display:none;"' : ''; ?> id="main-header" class="w-100 lazy" <?php if (is_user_logged_in()) {
-    echo 'style="margin-top:30px"';
-} ?>>
-    <div class="flex-nowrap bg-white">
+<header class="w-100 lazy <?php echo is_page_template('landing-1403.php') || is_page_template('landing.php') ? 'd-none' : ''; ?>"
+        id="main-header"  <?php is_user_logged_in() ?? 'style="margin-top:30px" '; ?>>
+    <div class="main__header flex-nowrap bg-white py-lg-3 lazy">
         <div class="iphone__inner d-lg-none d-block z-top position-relative">
             <div class="d-inline-flex justify-content-between align-items-center p-3 w-100 z-top position-absolute bg-white">
                 <?php get_template_part('template-parts/header-button'); ?>
-                <a class="navbar-brand me-0" href="<?php echo esc_url(get_home_url()) ?>">
+                <a class="navbar-brand me-0" href="<?php echo esc_url(get_home_url()) ?>" aria-label="logo">
                     <?php
                     the_field('header_logo', 'option');
                     ?>
@@ -33,7 +39,7 @@
                     <?php
                     wp_nav_menu(array(
                         'theme_location' => 'headerMenuLocation',
-                        'menu_class' => 'navbar-nav mt-5 w-100 flex-column pe-0 gap-5 w-100 justify-content-between',
+                        'menu_class' => 'navbar-nav mt-5 w-100 flex-column pe-0 gap-4 w-100 justify-content-between',
                         'container' => false,
                         'menu_id' => 'navbarTogglerMenu',
                         'item_class' => 'nav-item',
@@ -52,9 +58,10 @@
                                 $icon = get_sub_field_object('icon');
                                 $url = get_sub_field('url');
                                 $value = $icon['value'];
+                                $name = get_sub_field_object('name');
                                 ?>
                                 <li class="d-flex align-items-center justify-content-center">
-                                    <a href="<?= $url; ?>"
+                                    <a href="<?= $url; ?>" aria-label="<?= $name['value']; ?>"
                                        class="p-1 social-icon position-relative d-block">
                                         <i class="<?= $value; ?> d-flex align-items-center justify-content-center fs-1"></i>
 
@@ -73,7 +80,7 @@
                     <?php
                     wp_nav_menu(array(
                         'theme_location' => 'headerMenuLocation',
-                        'menu_class' => 'navbar-nav flex-row pe-0 gap-5 w-100 justify-content-between desktop-menu',
+                        'menu_class' => 'navbar-nav flex-row pe-0 gap-lg-5 gap-4 w-100 justify-content-between desktop-menu',
                         'container' => false,
                         'menu_id' => 'navbarTogglerMenu',
                         'item_class' => 'nav-item',
@@ -83,7 +90,7 @@
                     ?>
                 </div>
                 <div class="d-flex col-lg-6 justify-content-end align-items-center">
-                    <a class="navbar-brand me-0" href="<?php echo esc_url(get_home_url()) ?>">
+                    <a class="navbar-brand me-0" href="<?php echo esc_url(get_home_url()) ?>" aria-label="logo">
                         <?php
                         the_field('header_logo', 'option');
                         ?>
@@ -95,15 +102,14 @@
 </header>
 <?php
 if (is_single() && get_post_type() == 'post') { ?>
-    <div class="position-fixed w-100" style="top: 68px;z-index: 2">
+    <div class="progress-container position-fixed w-100 pt-3 lazy" style="z-index: 10">
         <!-- Add this to your HTML file -->
-        <div class="progress">
-            <div class="progress-bar " role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0"
+        <div class="progress rounded-0">
+            <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0"
                  aria-valuemax="100"></div>
         </div>
     </div>
 <?php } ?>
-<main>
-
-
-
+<?php if (!is_page_template('landing.php') && !is_page_template('landing-1403.php'))  { ?>
+    <div class="gap"></div>
+<?php } ?>

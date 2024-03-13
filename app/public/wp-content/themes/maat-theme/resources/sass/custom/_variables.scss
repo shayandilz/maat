@@ -24,7 +24,7 @@ $font-weight-bolder: 900;
 $font-weight-base: $font-weight-normal;
 
 $min-contrast-ratio: 2.5;
-$font-family-base: Ravi, 'sans-serif', 'Nunito';
+$font-family-base: Ravi, Sofia , 'sans-serif', 'Nunito';
 $font-size-base: 1.14rem * calc(14/16);
 $small-font-size: .875rem  * calc(14/16);
 $line-height-base: 1.5;
@@ -55,7 +55,8 @@ $display-font-sizes:(
         3: 4rem,
         4: 3.5rem,
         5: 3rem,
-        6: 2.5rem
+        6: 2.5rem,
+        7: 2rem
 );
 
 //container
@@ -64,6 +65,8 @@ $container-max-widths: (
         md: 720px,
         lg: 960px,
         xl: 1140px,
-        xxl: 1530px
+        xxl: 1530px,
+        //xxl: 85vw,
+        //xxxl: 80vw
 );
 

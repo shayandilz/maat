@@ -11,13 +11,6 @@
 .custom-container {
   @include make-container();
 }
-//mobile menu
-@media only screen and (max-width: 992px) {
-
-}
-
-
-
 
 //back to top buttom
 header{
@@ -33,13 +26,10 @@ header{
   }
 }
 .scrolled {
-  .backTo_Top {
-    @extend .intro
-  }
-  .iphone__inner > div{
+  &:not(.single) .iphone__inner > div{
     box-shadow: 0px -11px 0px 14px #00B3AC;
   }
-  header{
+  &:not(.single) header{
     box-shadow: 0px -11px 0px 14px #00B3AC;
   }
   nav{
@@ -56,42 +46,13 @@ header{
   z-index: 10;
   transition: 0.5s;
   line-height: 2.4;
-  transform: translateX(-200%);
   opacity: 0;
   &:hover {
     transform: scale(1.05);
   }
 }
-.intro {
-  animation: intro 800ms ease-out forwards;
-}
-@keyframes intro {
-  from {
-    transform: translateX(-200%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-.outro {
-  animation: outro 800ms ease-out forwards;
-}
-@keyframes outro {
-  from {
-    transform: translateX(0%);
-    opacity: 0.5;
-  }
-
-  to {
-    transform: translateX(-200%);
-    opacity: 0;
-  }
-}
 
 //hamburger
-
 .line {
   fill: none;
   stroke: $primary;
@@ -131,7 +92,7 @@ header{
 
 //menu
 //underline effect
-.desktop-menu a:after {
+.desktop-menu a:after , .desktop-menu li.current-menu-item a:after {
   background-color: $primary;
   border-radius: 30px;
   bottom: -10px;
@@ -147,7 +108,7 @@ header{
   transition: transform .5s ease-out,opacity .5s ease-out;
   width: 100%;
 }
-.desktop-menu a:hover:after {
+.desktop-menu a:hover:after , .desktop-menu li.current-menu-item a:after  {
   opacity: 1;
   transform: scaleX(1);
   transform-origin: left;
@@ -239,4 +200,6 @@ header{
     }
   }
 }
-
+body.is--active .progress-container {
+  z-index: 9!important;
+}

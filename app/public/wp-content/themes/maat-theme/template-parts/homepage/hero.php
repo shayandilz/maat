@@ -1,15 +1,15 @@
 <section class="container">
-    <div class="row gx-4 min-vh-75 margin-t-80">
-        <div class="col-lg-6 col-12 mt-5">
+    <div class="row gx-4 min-vh-75">
+        <div class="col-lg-6 col-12 pt-3">
             <?php
-            if (get_field('slider__image') == 'slider ') {
+            if (get_field('slider__image') == 'slider') {
                 get_template_part('template-parts/homepage/slider/slider');
-            } else {
+            } if (get_field('slider__image') == 'image ') {
                 the_field('hero_image');
             } ?>
 
         </div>
-        <div class="col-lg-6 col-12 gap-lg-5 gap-3 d-flex flex-column justify-content-start">
+        <div class="col-lg-6 col-12 gap-lg-5 gap-3 d-flex flex-column justify-content-start pt-4 pt-lg-0">
             <div class="row justify-content-end">
                 <div class="col-12">
                     <h1 class="text-center mt-2 mt-lg-0 text-lg-end display-2 sofia text-primary text-uppercase fw-bolder lh-sm"
@@ -18,8 +18,8 @@
                     </h1>
                 </div>
             </div>
-            <div class="row flex-column mt-0 mt-lg-5">
-                <div class="col-12 text-justify fs-6 mt-0 mt-lg-5" data-aos="fade-left" data-aos-delay="200">
+            <div class="row flex-column mt-0 mt-lg-5 align-items-end">
+                <div class="col-12 col-lg-6 text-justify fs-6 mt-0 mt-lg-5" data-aos="fade-left" data-aos-delay="200">
                     <?php the_field('hero_text'); ?>
                 </div>
             </div>

@@ -12,7 +12,7 @@
                 $portfolio_button = get_field('portfolio_button');
                 if( $portfolio_button ): ?>
                     <div class="button-white w-auto px-0">
-                        <a class="btn bg-transparent position-relative fs-6 p-0" data-aos="fade-left" data-aos-delay="500" href="<?php echo esc_url( $portfolio_button['link'] ); ?>">
+                        <a class="btn bg-transparent position-relative fs-6 p-0 fw-semibold" data-aos="fade-left" data-aos-delay="500" href="<?php echo esc_url( $portfolio_button['link'] ); ?>">
                             <?php echo esc_html( $portfolio_button['title'] ); ?>
                         </a>
                     </div>
@@ -29,7 +29,7 @@
                         $i++;
                         setup_postdata($portfolio); ?>
                         <li class="col-lg-6" data-aos="zoom-in" data-aos-delay="<?= $i; ?>00" data-aos-duration="<?= $i; ?>00">
-                            <img class="img-fluid"
+                            <img class="img-fluid" width="800" height="400"
                                  src="<?php echo get_the_post_thumbnail_url($portfolio->ID) ?>"
                                  alt="<?= $portfolio->post_title; ?>">
                         </li>

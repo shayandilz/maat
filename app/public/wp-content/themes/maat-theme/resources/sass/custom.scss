@@ -16,7 +16,6 @@
 
 //swiper pagination
 .swiper-pagination-total {
-  font-size: 50px !important;
   padding-top: 10px;
   @extend .fw-bold;
 }
@@ -30,18 +29,19 @@
     filter: grayscale(1);
 
     &.scaled-down {
-      transform: scale(1) !important;
+      transform: scale(0.9) !important;
     }
   }
 
   .swiper-slide-active {
-    transform: scale(1.8) !important;
+    transform: scale(1.2) !important;
     filter: grayscale(0) !important;
   }
 }
 
 
 //about us svg
+
 #about_svg polygon, #about_svg line, #about_svg path, #about_svg polyline {
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
@@ -86,6 +86,15 @@
 
 
 // services card text
+.services-card {
+  ul {
+    list-style: square;
+    li::marker {
+      color:$primary;
+    }
+  }
+
+}
 .card-text {
   div {
     height: 70px;
@@ -175,7 +184,7 @@ input[type="submit"], {
 }
 
 //SVG Services
-.svg-service svg:not(.svgDown) {
+.svg-service svg:not(.svgDown  , .svg-sv) {
   path, line, polyline, polygon {
     fill: none !important;
     stroke: #00aca9;
@@ -185,7 +194,7 @@ input[type="submit"], {
   }
 }
 
-.svg-service-second svg:not(.svgDown) {
+.svg-service-second svg:not(.svgDown  , .svg-sv) {
   path, line, polyline, polygon {
     fill: none !important;
     stroke: #00aca9;
@@ -197,24 +206,29 @@ input[type="submit"], {
 
 .home .svg-service {
   @extend .bg-secondary;
-  > div{
-  @extend .border-warning;
+
+  > div {
+    @extend .border-warning;
   }
+
   &:hover {
     @extend .bg-warning;
-    > div{
+
+    > div {
       @extend .border-primary;
     }
-    h5 {
+
+    .service-title {
       @extend .text-white;
     }
 
     path, line, polyline, polygon {
-      stroke: #ffffff !important;
+      stroke: white !important;
+      fill: white
     }
 
-    path, line, polyline, polygon {
-      stroke: #ffffff !important;
+    rect {
+      fill: white
     }
   }
 }
@@ -255,7 +269,76 @@ input[type="submit"], {
   }
 }
 
+//blog
+.card-image {
+  background: $primary;
+  height: 250px;
+
+  .card-title {
+    color: $danger;
+  }
+
+  .post-number {
+    color: white;
+  }
+}
+
 //blog single
+#startProgressBar > * {
+  line-height: 2.2;
+}
+
+body.admin-bar {
+  .progress-container {
+    top: 100px !important
+  }
+}
+
+.progress {
+  height: 0.5rem;
+}
+
+.breadcrumb-item a {
+  color: $dark
+}
+
 .text-link a {
   @extend .text-primary;
+}
+
+// modal
+.portfolio-modal.show {
+  backdrop-filter: blur(10px);
+}
+
+// portfolio
+.portfolio-dialog {
+  transform: translateY(-50%) !important;
+  top:50%;
+}
+.portfolio-card {
+  .play_button {
+    transition: all 0.4s ease-out;
+    width: 80px;
+    height: 80px;
+    i {
+      line-height: 0;
+      font-size: 6.5rem ;
+      cursor: pointer;
+    }
+  }
+
+  img {
+    transition: 0.3s ease-out;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+    }
+  }
+}
+.col-md-3 .portfolio-card {
+  .play_button i {
+    font-size: 3.5rem
+  }
 }

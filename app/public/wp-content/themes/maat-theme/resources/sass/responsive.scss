@@ -1,4 +1,53 @@
 @include media-breakpoint-up(lg) {
+  .achivement-img {
+    max-height: 400px;
+    width: auto;
+  }
+  .swiper-pagination-total {
+    font-size: 40px !important;
+  }
+  .swiper-pagination-current {
+    font-size: 45px !important;
+  }
+  .progress-container {
+    top:70px;
+  }
+  .portfolio-card {
+    .play_button {
+        top: 150%;
+    }
+    &:hover {
+      .play_button {
+        top: 50%;
+      }
+    }
+  }
+  .card-image {
+    & ,.card-image , .post-number {
+      transition: all 0.3s linear;
+    }
+    &:hover {
+      background: $danger;
+      .card-title {
+        color:white;
+      }
+      .post-number {
+        color: $primary;
+      }
+    }
+  }
+  body {
+    .gap {
+      height: 110px;
+    }
+
+    &.logged-in {
+      .gap {
+        height: 130px;
+      }
+    }
+  }
+
   .supah-scroll {
     position: fixed;
     z-index: 1;
@@ -17,6 +66,59 @@
   }
 }
 @include media-breakpoint-down(lg) {
+  #startProgressBar article {
+    h2{
+      font-size: 1.4rem;
+    }
+    h3 {
+      font-size:1.3rem;
+    }
+    h4 {
+      font-size:1.2rem;
+    }
+    h5 {
+      font-size:1.1rem;
+    }
+    h6 {
+      font-size: 1.0rem;
+    }
+  }
+
+  .achivement-img {
+    max-height: 250px;
+    width: auto;
+  }
+  .swiper-pagination-current {
+    font-size: 35px !important;
+  }
+  .swiper-pagination-total {
+    font-size: 30px !important;
+  }
+  .progress-container {
+    top:80px;
+  }
+  .post-number {
+    font-size: 4.5rem;
+  }
+  .card-title {
+    font-size: 1.5rem !important;
+  }
+  .portfolio-card {
+    .play_button {
+      top: 50%;
+       i {
+        font-size: 3.5rem !important;
+      }
+    }
+  }
+  .card-image {
+    .post-number {
+      color: $danger;
+    }
+  }
+  .gap {
+    height: 90px;
+  }
   .custom-container{
     width: 100%;
   }
@@ -33,6 +135,11 @@
   }
 }
 @include media-breakpoint-down(xl) {
+}
+@media all and (min-width:1960px)  {
+  .container {
+    max-width:80vw!important;
+  }
 }
 @include media-breakpoint-down(sm) {
   .fs-1 {
@@ -63,6 +170,9 @@
 }
 
 @include media-breakpoint-up(md) {
+  .gfield {
+    margin-top: 1rem;
+  }
 }
 @include media-breakpoint-down(md) {
 }
