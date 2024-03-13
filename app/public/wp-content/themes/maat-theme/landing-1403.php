@@ -209,15 +209,43 @@ get_header(); ?>
     <style>
         html * { font-family: 'RaviVF'!important; }
         @media screen and (max-width: 1023px) {
+            .row-blue {
+                padding-bottom:0!important;
+            }
+            .gchoice_4_13_1 {
+                padding-bottom: 0!important;
+                padding-right: 0 !important;
+            }
+            .gfmc-field {
+                padding: 0 15px 15px;
+            }
+            .gfmc-container { flex-direction: row!important; flex-wrap:wrap}
             article p {font-size: 1.1rem !important; }
         }
         @media screen and (min-width: 1024px) {
+            .gfmc-container {
+            margin-top:1rem;
+        }
             #gform_submit_button_4 { font-size: 2rem!important;}
             .landing-hero { max-height: 100vh;}
             .textHeader { font-size: 7rem !important; }
         }
+        #label_4_13_1 {
+            font-weight: bolder;
+            font-size: 20px
+        }
         .textHeader { font-size: 2.6rem}
-        #gform_fields_4 input {
+        #input_4_13 {
+            color: white;
+            font-weight: bolder;
+            font-size: 20px;
+            padding:0
+        }
+        .gfmc-container{
+            background: var(--bs-primary);
+            align-items:center!important;
+        }
+        #gform_fields_4 input , .gchoice {
             background: var(--bs-primary);
             padding: 15px;
             color: white;
@@ -246,5 +274,10 @@ get_header(); ?>
             font-size: 1.5rem;
             font-weight: bolder
         }
+        #field_4_10 {
+            background: var(--bs-primary);
+        }
+        #choice_4_13_1 { display:none}
+        .row-blue  { margin-top:0!important}
     </style>
 <?php get_footer();
