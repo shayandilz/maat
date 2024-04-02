@@ -13,6 +13,8 @@ function theme_scripts() {
 	}
 	if ( is_page_template( 'landing-1403.php' ) ) {
 		wp_enqueue_style( 'RaviVF', get_template_directory_uri() . '/public/fonts/RaviVF/fontFace.css', array() );
+		wp_enqueue_style( 'custom', get_stylesheet_directory_uri() . '/public/css/custom.css', array(), );
+
 	}
 	wp_enqueue_style( 'style', get_stylesheet_directory_uri() . '/public/css/style.css', array(), );
 	wp_enqueue_script( 'main-js', get_template_directory_uri() . '/public/js/app.js', array(), true );
