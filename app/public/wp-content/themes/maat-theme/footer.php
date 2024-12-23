@@ -1,4 +1,4 @@
-<footer class="bg-primary <?php echo is_page_template('landing-1403.php') || is_page_template('landing.php') ? 'd-none' : ''; ?>">
+<footer class="bg-primary <?php echo is_page_template('datamaat-landing.php') || is_page_template('landing-1403.php') || is_page_template('landing.php') ? 'd-none' : ''; ?>">
     <?php
     if (is_page_template('contact.php')) { ?>
         <div class="row py-5 align-items-center justify-content-center">
@@ -115,8 +115,6 @@
             </div>
         </div>
     <?php } ?>
-
-
 </footer>
 </main>
 <?php wp_footer(); ?>

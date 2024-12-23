@@ -1,13 +1,7 @@
 <section class="container">
     <div class="row gx-4 min-vh-75">
         <div class="col-lg-6 col-12 pt-3">
-            <?php
-            if (get_field('slider__image') == 'slider') {
-                get_template_part('template-parts/homepage/slider/slider');
-            } if (get_field('slider__image') == 'image ') {
-                the_field('hero_image');
-            } ?>
-
+            <?php  get_template_part('template-parts/homepage/slider/slider');?>
         </div>
         <div class="col-lg-6 col-12 gap-lg-5 gap-3 d-flex flex-column justify-content-start pt-4 pt-lg-0">
             <div class="row justify-content-end">
@@ -19,13 +13,13 @@
                 </div>
             </div>
             <div class="row flex-column mt-0 mt-lg-5 align-items-end">
-                <div class="col-12 col-lg-6 text-justify fs-6 mt-0 mt-lg-5" data-aos="fade-left" data-aos-delay="200">
+                <div class="col-12 col-xxl-6 text-justify fs-6 mt-0 mt-lg-5" data-aos="fade-left" data-aos-delay="200">
                     <?php the_field('hero_text'); ?>
                 </div>
             </div>
         </div>
         <?php
-        if (get_field('slider__image') == 'slider ') { ?>
+        if (get_field('slider-detail')) { ?>
             <div class="col-lg-6">
                 <div class="row pt-1 justify-content-between align-items-center">
                     <div class="col-6 d-flex justify-content-start gap-3 text-primary fs-4">

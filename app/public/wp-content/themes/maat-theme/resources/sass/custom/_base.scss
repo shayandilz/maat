@@ -6,6 +6,9 @@ html, body {
   line-height:1.8!important
 }
 
+body * {
+  scroll-margin-top: 200px;
+}
 // SCROLL bar styles
 ::-webkit-scrollbar {
   width: 6px;

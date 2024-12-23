@@ -1,12 +1,12 @@
 <section class="container min-vh-50 d-flex align-items-center mt-lg-4 mt-5">
     <div class="row justify-content-center justify-content-lg-between g-4 g-lg-2">
         <div class="col-lg-6 row px-0 px-lg-2">
-            <div class="col-lg-6">
+            <div class="col-xxl-6">
                 <h2 class="text-start text-primary display-5 fw-bolder text-uppercase sofia" data-aos="fade-up" data-aos-delay="100" data-aos-duration="500">
                     <?= get_field('services_section_title') ?>
                 </h2>
             </div>
-            <div class="col-lg-6 text-justify fw-normal" data-aos="fade-up" data-aos-delay="200" data-aos-duration="400">
+            <div class="col-xxl-6 text-justify fw-normal" data-aos="fade-up" data-aos-delay="200" data-aos-duration="400">
                 <?= get_field('services_section_text') ?>
                 <?php
                 $services_button = get_field('services_button');
